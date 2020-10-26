@@ -1,11 +1,19 @@
 :root {
   --app-background-color: #ffffff;
-  --dynamic-title-color: #363636;
-  --dynamic-subtitle-color: #4a4a4a;
+  --sec-app-background-color: #fafafa;
+  --title-color: #1f1f1f;
+  --text-color: #585252;
+  --link-color: #4392f1;
+  --link-sec-color: #dc493a;
+  --link-thi-color: #1c110a;
 }
 
 [theme='dark'] {
-  --app-background-color: #091a28;
-  --dynamic-title-color: #ffffff;
-  --dynamic-subtitle-color: cyan;
+  --app-background-color: #1f1f1f;
+  --sec-app-background-color: #585252;
+  --title-color: #ffffff;
+  --text-color: #fafafa;
+  --link-color: #e08dac;
+  --link-sec-color: #6a7fdb;
+  --link-thi-color: #57e2e5;
 }

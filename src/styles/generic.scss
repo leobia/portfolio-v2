@@ -1,0 +1,93 @@
+$body-size: 16px;
+$body-rendering: optimizeLegibility !default;
+$font-family: 'Nunito', sans-serif;
+$body-overflow-x: hidden;
+$body-overflow-y: scroll;
+$body-font-size: 1em;
+$body-weight: normal;
+$body-line-height: 1.5;
+
+$body-background-color: var(--app-background-color);
+$sec-body-background-color: var(--sec-app-background-color);
+$title-color: var(--title-color);
+$text-color: var(--text-color);
+$link-color: var(--link-color);
+$link-sec-color: var(--link-sec-color);
+$link-thi-color: var(--link-thi-color);
+
+$text-hover-color: mixb(var(--text-color), 0.05);
+$link-hover-color: mixb(var(--link-color), 0.05);
+$link-hover-sec-color: mixb(var(--link-sec-color), 0.05);
+$link-hover-thi-color: mixb(var(--link-thi-color), 0.05);
+
+html {
+  background-color: $body-background-color;
+  font-size: $body-size;
+  font-family: $font-family;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 300px;
+  overflow-x: $body-overflow-x;
+  overflow-y: $body-overflow-y;
+  text-rendering: $body-rendering;
+  text-size-adjust: 100%;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section {
+  display: block;
+}
+
+body {
+  color: $text-color;
+  font-size: $body-font-size;
+  font-weight: $body-weight;
+  line-height: $body-line-height;
+}
+
+a {
+  color: $link-color;
+  cursor: pointer;
+  text-decoration: none;
+  strong {
+    color: currentColor;
+  }
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+// typography
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
