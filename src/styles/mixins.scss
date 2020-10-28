@@ -12,3 +12,25 @@
       '),rgba(255, 255, 255,' + $opacity + ')) ' + $variable
   );
 }
+
+$phone-width: 540px; // 540px
+$tablet-width: 720px; // 720px
+$desktop-width: 960px; // 960px
+
+@mixin phone {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}

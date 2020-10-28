@@ -1,8 +1,19 @@
 .nav {
-  background-color: var(--app-background-color);
+  background-color: $title-color;
   color: var(--dynamic-title-color);
   overflow: hidden;
   position: fixed;
   top: 0;
   width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 7em 12em 3em;
+
+  @include tablet {
+    padding: 3em 2em;
+  }
+
+  @include phone {
+    padding: 2em 1em;
+  }
 }
