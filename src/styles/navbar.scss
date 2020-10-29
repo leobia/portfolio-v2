@@ -1,19 +1,40 @@
 .nav {
-  background-color: $title-color;
-  color: var(--dynamic-title-color);
-  overflow: hidden;
-  position: fixed;
-  top: 0;
+  background-color: $body-background-color;
+  color: $title-color;
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 7em 12em 3em;
+  justify-content: space-between;
+  margin-top: 5em;
 
   @include tablet {
-    padding: 3em 2em;
+    margin-top: 3em;
   }
 
   @include phone {
-    padding: 2em 1em;
+    margin-top: 3em;
+  }
+}
+
+.nav-links {
+  display: flex;
+  width: 60%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@include phone {
+  .nav-links :not(:first-child) {
+    display: none;
+  }
+}
+
+.nav-burger {
+  display: none;
+  color: $title-color;
+  font-size: 20px;
+
+  @include phone {
+    display: block;
   }
 }

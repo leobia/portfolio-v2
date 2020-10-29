@@ -1,8 +1,18 @@
 <template>
   <div class="nav">
-    <img src="@/assets/logo.png" style="width: 3em" />
-    <router-link to="/">Home</router-link> |
-    <input type="checkbox" class="theme-switch" v-model="darkMode" />
+    <div class="nav-links">
+      <a class="nav-burger">
+        <span class="icon-menu"></span>
+      </a>
+      <img src="@/assets/logo.png" style="width: 3em" />
+      <router-link class="navbar-link" to="/">INTRODUCTION</router-link>
+      <router-link to="/">WORK</router-link>
+      <router-link to="/">CONTACT</router-link>
+      <input type="checkbox" class="theme-switch" v-model="darkMode" />
+    </div>
+    <div>
+      <button>HIRE ME</button>
+    </div>
   </div>
 </template>
 
@@ -10,6 +20,41 @@
 
 <script>
 export default {
-  name: 'navbar'
+  name: 'navbar',
+  data() {
+    return {
+      darkMode: false
+    }
+  },
+  mounted() {
+    // set 'app-background' class to body
+    let bodyElement = document.body
+    bodyElement.classList.add('app-background')
+
+    let htmlElement = document.documentElement
+    let theme = localStorage.getItem('theme')
+
+    if (theme === 'dark') {
+      htmlElement.setAttribute('theme', 'dark')
+      this.darkMode = true
+    } else {
+      htmlElement.setAttribute('theme', 'light')
+      this.darkMode = false
+    }
+  },
+  watch: {
+    darkMode: function() {
+      // add/remove class to/from html tag
+      let htmlElement = document.documentElement
+
+      if (this.darkMode) {
+        localStorage.setItem('theme', 'dark')
+        htmlElement.setAttribute('theme', 'dark')
+      } else {
+        localStorage.setItem('theme', 'light')
+        htmlElement.setAttribute('theme', 'light')
+      }
+    }
+  }
 }
 </script>
