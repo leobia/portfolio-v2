@@ -8,12 +8,11 @@
       <router-link class="nav-link" to="/">INTRODUCTION</router-link>
       <router-link class="nav-link" to="/">WORK</router-link>
       <router-link class="nav-link" to="/">CONTACT</router-link>
-      <input
-        type="checkbox"
+      <div
         class="theme-switch"
-        v-model="darkMode"
-        @change="checkPreloadClass"
-      />
+        :class="{ 'toggle-btn--dark': darkMode }"
+        @click="switchTheme"
+      ></div>
     </div>
     <div>
       <div class="main-button">HIRE ME</div>
@@ -62,10 +61,11 @@ export default {
     }
   },
   methods: {
-    checkPreloadClass() {
+    switchTheme() {
       if (document.documentElement.classList.contains('preload')) {
         document.documentElement.classList.remove('preload')
       }
+      this.darkMode = !this.darkMode
     }
   }
 }
