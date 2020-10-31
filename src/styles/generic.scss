@@ -1,6 +1,6 @@
 $body-size: 16px;
 $body-rendering: optimizeLegibility !default;
-$font-family: 'Nunito', sans-serif;
+$font-family: 'Overpass', sans-serif;
 $body-overflow-x: hidden;
 $body-overflow-y: scroll;
 $body-font-size: 1em;
@@ -59,6 +59,9 @@ a {
     color: currentColor;
   }
   &:hover {
+    color: $link-hover-color;
+  }
+  &:active {
     color: $link-hover-color;
   }
 }

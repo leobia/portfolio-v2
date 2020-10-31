@@ -1,0 +1,23 @@
+$button-color-gradient: var(--button-color-gradient);
+$button-color-backup: var(--button-color-backup);
+$button-box-shadow: var(--button-box-shadow);
+$button-box-shadow-hover: var(--button-box-shadow-hover);
+
+.main-button {
+  padding: 0.5em 1.7em;
+  background: $button-color-backup;
+  background: $button-color-gradient;
+  color: $body-background-color;
+  border-radius: 50px;
+  box-shadow: $button-box-shadow;
+
+  &:hover {
+    animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
+  }
+}
+
+@keyframes pulse {
+  to {
+    box-shadow: $button-box-shadow-hover;
+  }
+}

@@ -18,9 +18,10 @@
 
 .nav-links {
   display: flex;
-  width: 60%;
+  width: 40%;
   align-items: center;
   justify-content: space-between;
+  font-weight: 700;
 }
 
 @include phone {
@@ -37,4 +38,7 @@
   @include phone {
     display: block;
   }
+}
+
+.nav-link {
 }

@@ -5,13 +5,18 @@
         <span class="icon-menu"></span>
       </a>
       <img src="@/assets/logo.png" style="width: 3em" />
-      <router-link class="navbar-link" to="/">INTRODUCTION</router-link>
-      <router-link to="/">WORK</router-link>
-      <router-link to="/">CONTACT</router-link>
-      <input type="checkbox" class="theme-switch" v-model="darkMode" />
+      <router-link class="nav-link" to="/">INTRODUCTION</router-link>
+      <router-link class="nav-link" to="/">WORK</router-link>
+      <router-link class="nav-link" to="/">CONTACT</router-link>
+      <input
+        type="checkbox"
+        class="theme-switch"
+        v-model="darkMode"
+        @change="checkPreloadClass"
+      />
     </div>
     <div>
-      <button>HIRE ME</button>
+      <div class="main-button">HIRE ME</div>
     </div>
   </div>
 </template>
@@ -53,6 +58,13 @@ export default {
       } else {
         localStorage.setItem('theme', 'light')
         htmlElement.setAttribute('theme', 'light')
+      }
+    }
+  },
+  methods: {
+    checkPreloadClass() {
+      if (document.documentElement.classList.contains('preload')) {
+        document.documentElement.classList.remove('preload')
       }
     }
   }
