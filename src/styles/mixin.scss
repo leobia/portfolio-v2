@@ -16,6 +16,7 @@
 $phone-width: 540px; // 540px
 $tablet-width: 720px; // 720px
 $desktop-width: 960px; // 960px
+$large-desktop-width: 1430px;
 
 @mixin phone {
   @media (max-width: #{$tablet-width}) {

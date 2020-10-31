@@ -2,10 +2,10 @@
   display: inline-block;
   width: 43px;
   height: 24px;
-  background-color: #1ec3f4;
   background-image: url('~@/assets/background@2x.png');
   background-size: 100%;
   border-radius: 12px;
+  border: 1px solid $text-color;
   position: relative;
   transition: all ease-in-out 0.4s;
   cursor: pointer;
@@ -14,7 +14,7 @@
     position: absolute;
     width: 18px;
     height: 18px;
-    background-color: white;
+    background-color: $text-color;
     border-radius: 50%;
     left: 3px;
     top: 3px;
@@ -24,8 +24,6 @@
   }
 
   &.toggle-btn--dark {
-    background-color: #13447e;
-
     &:before {
       left: 22px;
     }

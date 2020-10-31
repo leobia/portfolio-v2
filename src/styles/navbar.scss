@@ -1,18 +1,20 @@
 .nav {
   background-color: $body-background-color;
   color: $title-color;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 5em;
+  padding: 0 19%;
 
   @include tablet {
     margin-top: 3em;
+    padding: 0 19%;
   }
 
   @include phone {
     margin-top: 3em;
+    padding: 0 19%;
   }
 }
 
@@ -22,6 +24,12 @@
   align-items: center;
   justify-content: space-between;
   font-weight: 700;
+}
+
+@media (max-width: #{$large-desktop-width - 1px}) {
+  .nav-links :not(:first-child) {
+    display: none;
+  }
 }
 
 @include phone {
@@ -35,7 +43,7 @@
   color: $title-color;
   font-size: 20px;
 
-  @include phone {
+  @media (max-width: #{$large-desktop-width - 1px}) {
     display: block;
   }
 }
