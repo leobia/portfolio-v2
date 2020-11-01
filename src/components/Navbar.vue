@@ -4,35 +4,49 @@
       <div
         class="nav-burger burger burger-squeeze"
         :class="{ open: menuOpen }"
-        @click="menuOpen = !menuOpen"
+        @click="toggleMenu"
       >
         <div class="burger-lines"></div>
       </div>
-      <img src="@/assets/logo.png" style="width: 3em" />
-      <router-link class="nav-link" to="/">INTRODUCTION</router-link>
-      <router-link class="nav-link" to="/">WORK</router-link>
-      <router-link class="nav-link" to="/">CONTACT</router-link>
-      <div
-        class="theme-switch"
-        :class="{ 'toggle-btn--dark': darkMode }"
-        @click="switchTheme"
-      ></div>
+      <NavbarLinks :darkMode="darkMode" @toggleTheme="switchTheme" />
     </div>
     <div>
       <div class="main-button">HIRE ME</div>
     </div>
+    <Sidebar :menuOpen="menuOpen" @close="menuOpen = false">
+      <NavbarLinks :darkMode="darkMode" @toggleTheme="switchTheme" />
+    </Sidebar>
   </div>
 </template>
 
 <style scoped></style>
 
 <script>
+import NavbarLinks from '@/components/NavbarLinks'
+import Sidebar from '@/components/Sidebar'
+
 export default {
   name: 'navbar',
+  components: { NavbarLinks, Sidebar },
   data() {
     return {
-      darkMode: false,
-      menuOpen: false
+      menuOpen: false,
+      darkMode: false
+    }
+  },
+
+  methods: {
+    toggleMenu() {
+      if (document.documentElement.classList.contains('preload')) {
+        document.documentElement.classList.remove('preload')
+      }
+      this.menuOpen = !this.menuOpen
+    },
+    switchTheme() {
+      if (document.documentElement.classList.contains('preload')) {
+        document.documentElement.classList.remove('preload')
+      }
+      this.darkMode = !this.darkMode
     }
   },
   mounted() {
@@ -63,14 +77,6 @@ export default {
         localStorage.setItem('theme', 'light')
         htmlElement.setAttribute('theme', 'light')
       }
-    }
-  },
-  methods: {
-    switchTheme() {
-      if (document.documentElement.classList.contains('preload')) {
-        document.documentElement.classList.remove('preload')
-      }
-      this.darkMode = !this.darkMode
     }
   }
 }

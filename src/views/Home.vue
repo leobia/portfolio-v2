@@ -2,12 +2,18 @@
   <div class="home-container">
     <section>
       <div class="section-content">
+        <h1><span class="slash">/</span> WEB DEVELOPER.</h1>
+
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam modi
         adipisci vel ipsum ab.
       </div>
     </section>
     <section>
       <div class="section-content">
+        <h1 class="has-text-align-end">
+          <span class="slash">/</span> OS WORK.
+        </h1>
+
         Aliquid alias non error culpa dicta veritatis suscipit odio neque autem
         sequi nostrum iure, debitis voluptas vero delectus dignissimos
         perferendis sit magnam asperiores, repudiandae sint tempora tempore
@@ -16,6 +22,8 @@
     </section>
     <section>
       <div class="section-content">
+        <h1><span class="slash">/</span> CONTACT.</h1>
+
         Magni repellendus dolor, magnam earum laboriosam ab est distinctio in id
         corporis, porro temporibus. Explicabo necessitatibus cumque, earum rem
         provident impedit! Dicta doloribus assumenda ipsam rerum! Placeat

@@ -33,7 +33,7 @@
   --button-color-backup: rgb(199, 199, 199);
   --button-box-shadow: 0 0 0 0 rgba(150, 150, 150, 0.31);
   --button-box-shadow-hover: 0 0 0 30px rgba(150, 150, 150, 0);
-  --font-weight: 300;
+  --font-weight: 350;
 }
 .preload {
   -webkit-transition: none !important;
@@ -50,5 +50,5 @@
   transition: none !important;
 }
 * {
-  transition: background-color 1s ease, color 0.4s ease;
+  transition: background-color 1s ease;
 }

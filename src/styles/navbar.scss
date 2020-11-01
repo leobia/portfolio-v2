@@ -42,6 +42,7 @@
   display: none;
   color: $title-color;
   font-size: 8px !important;
+
   @media (max-width: #{$large-desktop-width - 1px}) {
     display: block;
   }
