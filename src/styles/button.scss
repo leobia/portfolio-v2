@@ -10,6 +10,7 @@ $button-box-shadow-hover: var(--button-box-shadow-hover);
   color: $body-background-color;
   border-radius: 50px;
   box-shadow: $button-box-shadow;
+  cursor: pointer;
 
   &:hover {
     animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);

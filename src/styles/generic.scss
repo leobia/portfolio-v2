@@ -4,7 +4,7 @@ $font-family: 'Overpass', sans-serif;
 $body-overflow-x: hidden;
 $body-overflow-y: scroll;
 $body-font-size: 1em;
-$body-weight: normal;
+$body-weight: var(--font-weight);
 $body-line-height: 1.5;
 
 $body-background-color: var(--app-background-color);
@@ -94,4 +94,8 @@ h5 {
 
 h6 {
   font-size: 0.875rem;
+}
+
+[theme='dark'] img {
+  filter: brightness(0.8) contrast(1.2);
 }

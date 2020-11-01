@@ -1,9 +1,13 @@
 <template>
   <div class="nav">
     <div class="nav-links">
-      <a class="nav-burger">
-        <span class="icon-menu"></span>
-      </a>
+      <div
+        class="nav-burger burger burger-squeeze"
+        :class="{ open: menuOpen }"
+        @click="menuOpen = !menuOpen"
+      >
+        <div class="burger-lines"></div>
+      </div>
       <img src="@/assets/logo.png" style="width: 3em" />
       <router-link class="nav-link" to="/">INTRODUCTION</router-link>
       <router-link class="nav-link" to="/">WORK</router-link>
@@ -27,7 +31,8 @@ export default {
   name: 'navbar',
   data() {
     return {
-      darkMode: false
+      darkMode: false,
+      menuOpen: false
     }
   },
   mounted() {
