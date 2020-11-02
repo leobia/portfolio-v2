@@ -7,6 +7,7 @@
   border-radius: 12px;
   border: 1px solid $text-color;
   position: relative;
+  transition: all ease-in-out 0.4s;
   cursor: pointer;
 
   &:before {
@@ -18,6 +19,7 @@
     left: 3px;
     top: 3px;
     content: '';
+    transition: all ease-in-out 0.4s;
     z-index: 10;
   }
 
