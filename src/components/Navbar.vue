@@ -10,7 +10,7 @@
       </div>
       <NavbarLinks :darkMode="darkMode" @toggleTheme="switchTheme" />
     </div>
-    <div>
+    <div class="has-margin-left-auto">
       <div class="main-button">HIRE ME</div>
     </div>
     <Sidebar :menuOpen="menuOpen" @close="menuOpen = false">
