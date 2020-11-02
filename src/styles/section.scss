@@ -1,24 +1,25 @@
 section {
-  padding: 2rem 20%;
+  padding: 14rem 20%;
   @include tablet {
-    padding: 2rem 11%;
+    padding: 12rem 11%;
   }
 
   @include phone {
-    padding: 2rem 6%;
+    padding: 9rem 6%;
   }
 }
 
 section:nth-child(2) {
   background: $sec-body-background-color;
   clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
-  padding: 10rem 20%;
+  padding: 14rem 20%;
 
   @include tablet {
-    padding: 10rem 11%;
+    padding: 12rem 11%;
   }
 
   @include phone {
-    padding: 10rem 6%;
+    padding: 9rem 6%;
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
   }
 }
