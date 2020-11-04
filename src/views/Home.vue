@@ -22,8 +22,10 @@
         <h1 class="has-text-align-end section-repos-title">
           <span class="slash">/</span> OS WORK.
         </h1>
-
-        <div v-if="!repoLoading" class="repo-container">
+        <div class="bouncing-loader" v-if="repoLoading">
+          <div></div>
+        </div>
+        <div v-else class="repo-container">
           <article class="card" v-for="(repo, index) in topRepos" :key="index">
             <header class="card-header">
               <h1 class="card-title">
