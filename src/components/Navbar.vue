@@ -8,13 +8,13 @@
       >
         <div class="burger-lines"></div>
       </div>
-      <NavbarLinks :darkMode="darkMode" @toggleTheme="switchTheme" />
+      <NavbarLinks :darkMode="darkMode" @toggle-theme="switchTheme" />
     </div>
     <div class="has-margin-left-auto">
       <div class="main-button">HIRE ME</div>
     </div>
     <Sidebar :menuOpen="menuOpen" @close="menuOpen = false">
-      <NavbarLinks :darkMode="darkMode" @toggleTheme="switchTheme" />
+      <NavbarLinks :darkMode="darkMode" @toggle-theme="switchTheme" />
     </Sidebar>
   </div>
 </template>
