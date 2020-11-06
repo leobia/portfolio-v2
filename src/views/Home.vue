@@ -18,7 +18,7 @@
       </div>
     </section>
     <section class="section-repo">
-      <div class="section-content">
+      <div class="section-content has-padding-bottom-9-rem">
         <h1 class="has-text-align-end section-repos-title">
           <span class="slash">/</span> OS WORK.
         </h1>
@@ -65,6 +65,7 @@
               placeholder="Name"
               name="name"
               id="name"
+              v-model="name"
               required
             />
             <label for="name" class="form-label">Your Name</label>
@@ -76,6 +77,7 @@
               placeholder="Email"
               name="email"
               id="email"
+              v-model="email"
               required
             />
             <label for="name" class="form-label">Your Email</label>
@@ -83,17 +85,21 @@
 
           <div class="form-group field">
             <textarea
-              type="text"
               class="form-field"
               placeholder="Message"
               name="message"
               id="message"
+              v-model="message"
               required
             />
             <label for="name" class="form-label">Your Message</label>
           </div>
 
-          <button class="round-button form-button">
+          <button
+            class="round-button form-button"
+            :disabled="sendDisabled"
+            @click="sendMessage"
+          >
             <i class="icon-paper-plane"></i>
           </button>
         </div>
@@ -111,7 +117,10 @@ export default {
   data() {
     return {
       repoLoading: false,
-      repos: null
+      repos: null,
+      email: '',
+      name: '',
+      message: ''
     }
   },
   methods: {
@@ -145,6 +154,12 @@ export default {
       }
       console.log(this.repos)
       this.repoLoading = false
+    },
+
+    sendMessage() {
+      this.message = ''
+      this.email = ''
+      this.name = ''
     }
   },
 
@@ -161,6 +176,14 @@ export default {
       }
 
       return topRepos
+    },
+
+    sendDisabled() {
+      return (
+        this.message.length === 0 ||
+        this.email.length === 0 ||
+        this.name.length === 0
+      )
     }
   },
 
