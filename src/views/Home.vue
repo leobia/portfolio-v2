@@ -57,10 +57,46 @@
       <div class="section-content">
         <h1><span class="slash">/</span> CONTACT.</h1>
 
-        Magni repellendus dolor, magnam earum laboriosam ab est distinctio in id
-        corporis, porro temporibus. Explicabo necessitatibus cumque, earum rem
-        provident impedit! Dicta doloribus assumenda ipsam rerum! Placeat
-        aliquam tenetur tempore.
+        <div class="contact-card">
+          <div class="form-group field">
+            <input
+              type="input"
+              class="form-field"
+              placeholder="Name"
+              name="name"
+              id="name"
+              required
+            />
+            <label for="name" class="form-label">Your Name</label>
+          </div>
+          <div class="form-group field">
+            <input
+              type="email"
+              class="form-field"
+              placeholder="Email"
+              name="email"
+              id="email"
+              required
+            />
+            <label for="name" class="form-label">Your Email</label>
+          </div>
+
+          <div class="form-group field">
+            <textarea
+              type="text"
+              class="form-field"
+              placeholder="Message"
+              name="message"
+              id="message"
+              required
+            />
+            <label for="name" class="form-label">Your Message</label>
+          </div>
+
+          <button class="round-button form-button">
+            <i class="icon-paper-plane"></i>
+          </button>
+        </div>
       </div>
     </section>
   </div>
@@ -130,6 +166,11 @@ export default {
 
   mounted() {
     this.fetchRepos()
+    setTimeout(() => {
+      if (document.documentElement.classList.contains('preload')) {
+        document.documentElement.classList.remove('preload')
+      }
+    }, 100)
   }
 }
 </script>

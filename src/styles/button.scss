@@ -22,3 +22,25 @@ $button-box-shadow-hover: var(--button-box-shadow-hover);
     box-shadow: $button-box-shadow-hover;
   }
 }
+
+.round-button {
+  background: $button-color-backup;
+  background: $button-color-gradient;
+  color: $body-background-color;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: $button-box-shadow;
+  cursor: pointer;
+  &:hover {
+    animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
+  }
+}
+.form-button {
+  position: absolute;
+  bottom: -20px;
+  left: 75%;
+}
