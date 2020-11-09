@@ -1,6 +1,6 @@
 <template>
   <div class="home-container">
-    <section>
+    <section id="introduction">
       <div class="section-content">
         <h3>Hi! I'm Leonardo Bianco 👋</h3>
         <h1><span class="slash">/</span> WEB DEVELOPER.</h1>
@@ -11,13 +11,18 @@
         </p>
         <p>
           Right now I consider myself a
-          <span class="border-marker-vue"><span>Vue</span></span>
-          enthusiast, you can find most of my open source work on Github built
-          with it!
+          <span class="border-marker border-marker-vue" @click="openVueSite"
+            ><span>Vue</span></span
+          >
+          enthusiast, you can find most of my open source work on
+          <span class="border-marker border-marker-github" @click="openVueSite"
+            ><span>Github</span></span
+          >
+          built with it!
         </p>
       </div>
     </section>
-    <section class="section-repo">
+    <section id="work" class="section-repo">
       <div class="section-content has-padding-bottom-9-rem">
         <h1 class="has-text-align-end section-repos-title">
           <span class="slash">/</span> OS WORK.
@@ -54,7 +59,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content">
+      <div class="section-content" id="contact">
         <h1><span class="slash">/</span> CONTACT.</h1>
 
         <div class="contact-card">
@@ -109,7 +114,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import axios from 'axios'
 
 export default {
   name: 'Home',
@@ -156,10 +161,34 @@ export default {
       this.repoLoading = false
     },
 
-    sendMessage() {
-      this.message = ''
-      this.email = ''
-      this.name = ''
+    async sendMessage() {
+      try {
+        const response = await axios.post(
+          '/.netlify/functions/send-contact-email',
+          {
+            contactName: this.name,
+            contactEmail: this.email,
+            message: this.message
+          }
+        )
+        this.message = ''
+        this.email = ''
+        this.name = ''
+        console.log(response)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    openVueSite() {
+      var yourWindow = window.open()
+      yourWindow.opener = null
+      yourWindow.location = 'https://vuejs.org/'
+    },
+
+    openRepositories() {
+      var yourWindow = window.open()
+      yourWindow.opener = null
+      yourWindow.location = 'https://github.com/leobia?tab=repositories'
     }
   },
 
@@ -199,16 +228,17 @@ export default {
 </script>
 
 <style scoped>
-.border-marker-vue {
+.border-marker {
+  cursor: pointer;
   position: relative;
 }
 
-.border-marker-vue span {
+.border-marker span {
   z-index: 1;
   position: relative;
 }
 
-.border-marker-vue::after {
+.border-marker::after {
   content: '';
   position: absolute;
   left: -0.1px;
@@ -218,10 +248,17 @@ export default {
   transform: scaleY(0.3);
   transition: transform 0.1s ease-in-out;
   transform-origin: bottom;
+}
+
+.border-marker-vue::after {
   background-color: hsla(136, 100%, 50%, 0.493);
 }
 
-.border-marker-vue:hover::after {
+.border-marker-github::after {
+  background-color: hsla(207, 100%, 50%, 0.493);
+}
+
+.border-marker:hover::after {
   transform: scaleY(1);
 }
 </style>

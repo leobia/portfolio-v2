@@ -1,8 +1,8 @@
 <template>
   <img src="@/assets/logo.png" style="width: 3em" />
-  <router-link class="nav-link" to="/">INTRODUCTION</router-link>
-  <router-link class="nav-link" to="/">WORK</router-link>
-  <router-link class="nav-link" to="/">CONTACT</router-link>
+  <a class="nav-link" @click="scrollTo('#introduction')">INTRODUCTION</a>
+  <a class="nav-link" @click="scrollTo('#work')">WORK</a>
+  <a class="nav-link" @click="scrollTo('#contact')">CONTACT</a>
   <div
     class="theme-switch"
     :class="{ 'toggle-btn--dark': darkMode }"
@@ -16,6 +16,13 @@ export default {
     darkMode: {
       type: Boolean,
       default: false
+    }
+  },
+  methods: {
+    scrollTo(id) {
+      document.querySelector(id).scrollIntoView({
+        behavior: 'smooth'
+      })
     }
   },
 
