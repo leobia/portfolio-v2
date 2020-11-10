@@ -17,6 +17,9 @@
   --font-weight: 400;
   --contact-box-shadow: 0 2.3px 5.3px rgba(0, 0, 0, 0.028),
     0 7.8px 17.9px rgba(0, 0, 0, 0.042), 0 35px 80px rgba(0, 0, 0, 0.07);
+
+  --scrollbar-color: #333030;
+  --scrollbar-hover-color: #1f1f1f;
 }
 
 [theme='dark'] {
@@ -39,6 +42,9 @@
   --contact-box-shadow: 0 1.2px 3.9px rgba(0, 0, 0, 0.07),
     0 3.4px 10.8px rgba(0, 0, 0, 0.1), 0 8.1px 25.9px rgba(0, 0, 0, 0.13),
     0 27px 86px rgba(0, 0, 0, 0.2);
+
+  --scrollbar-color: #bfbfbf;
+  --scrollbar-hover-color: #f1f1f1;
 }
 .preload {
   -webkit-transition: none !important;

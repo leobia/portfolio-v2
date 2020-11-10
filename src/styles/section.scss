@@ -12,7 +12,7 @@ section {
 section:nth-child(2) {
   background: $sec-body-background-color;
   clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
-  padding: 14rem 8%;
+  padding: 14rem 7%;
 
   @include tablet {
     padding: 12rem 5%;

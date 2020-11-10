@@ -6,12 +6,12 @@ export default {
   name: 'SkeletonBox',
   props: {
     maxWidth: {
-      // The default maxiumum width is 100%.
+      // The default maxiumum width is 80%.
       default: 80,
       type: Number
     },
     minWidth: {
-      // Lines have a minimum width of 80%.
+      // Lines have a minimum width of 50%.
       default: 50,
       type: Number
     },

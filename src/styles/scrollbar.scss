@@ -1,0 +1,20 @@
+$scrollbar-color: var(--link-color);
+$scrollbar-hover-color: var(--link-sec-color);
+$scrollbar-track-color: var(--app-background-color);
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-color;
+  border-radius: 9px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $scrollbar-hover-color;
+}
+::-webkit-scrollbar-track {
+  background: $scrollbar-track-color;
+  border-radius: 8px;
+  box-shadow: inset 7px 10px 12px $scrollbar-track-color;
+}
