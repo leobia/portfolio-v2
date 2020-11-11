@@ -11,12 +11,13 @@
       <NavbarLinks :darkMode="darkMode" @toggle-theme="switchTheme" />
     </div>
     <div class="has-margin-left-auto">
-      <div class="main-button">HIRE ME</div>
+      <div class="main-button" @click="downloadCv">DOWNLOAD CV</div>
     </div>
     <Sidebar :menuOpen="menuOpen" @close="menuOpen = false">
       <NavbarLinks :darkMode="darkMode" @toggle-theme="switchTheme" />
     </Sidebar>
   </div>
+  <a style="display: none" :href="curriculumUrl"></a>
 </template>
 
 <style scoped></style>
@@ -31,7 +32,8 @@ export default {
   data() {
     return {
       menuOpen: false,
-      darkMode: false
+      darkMode: false,
+      curriculumUrl: ''
     }
   },
 
@@ -47,6 +49,37 @@ export default {
         document.documentElement.classList.remove('preload')
       }
       this.darkMode = !this.darkMode
+    },
+    async downloadCv() {
+      if (!this.curriculumUrl) {
+        try {
+          const response = await this.$http.get(
+            '/.netlify/functions/get-curriculum'
+          )
+
+          if (response && response.data) {
+            const file = response.data.fields.file[0]
+            this.curriculumUrl = file.url
+            this.fileName = file.filename
+
+            this.openCv()
+          }
+        } catch (error) {
+          console.error(error)
+        }
+      } else {
+        this.openCv()
+      }
+    },
+    openCv() {
+      let link = document.createElement('a')
+      link.setAttribute('type', 'hidden')
+      link.href = this.curriculumUrl
+      link.download = this.fileName
+      link.target = '_blank'
+      document.body.appendChild(link)
+      link.click()
+      link.remove()
     }
   },
   mounted() {
