@@ -1,5 +1,10 @@
 <template>
-  <img src="@/assets/logo.png" width="38" height="38" />
+  <img
+    src="@/assets/logo.png"
+    width="38"
+    height="38"
+    alt="Logo Leonardo Bianco portfolio"
+  />
   <a class="nav-link" @click="scrollTo('#introduction')">INTRODUCTION</a>
   <a class="nav-link" @click="scrollTo('#work')">WORK</a>
   <a class="nav-link" @click="scrollTo('#contact')">CONTACT</a>

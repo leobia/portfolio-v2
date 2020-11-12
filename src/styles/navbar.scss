@@ -1,3 +1,5 @@
+$nav-link-hover-color: mixb(var(--nav-link-color), 0.5);
+$nav-link-color: var(--nav-link-color);
 .nav {
   background-color: $body-background-color;
   color: $title-color;
@@ -49,4 +51,9 @@
 }
 
 .nav-link {
+  color: $nav-link-color;
+
+  &:hover {
+    color: $nav-link-hover-color;
+  }
 }

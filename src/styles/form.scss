@@ -1,6 +1,7 @@
 $primary: var(--title-color);
 $secondary: var(--title-color);
 $gray: #bfbfbf;
+$nav-link-color: var(--nav-link-color);
 .form-group {
   position: relative;
   padding: 15px 0 0;
@@ -33,7 +34,7 @@ $gray: #bfbfbf;
   top: 0;
   display: block;
   transition: 0.2s;
-  color: $gray;
+  color: $nav-link-color;
 }
 
 .form-field:focus {

@@ -26,7 +26,7 @@
             v-model="email"
             required
           />
-          <label for="name" class="form-label">Your Email</label>
+          <label for="email" class="form-label">Your Email</label>
         </div>
 
         <div class="form-group field">
@@ -38,11 +38,12 @@
             v-model="message"
             required
           />
-          <label for="name" class="form-label">Your Message</label>
+          <label for="message" class="form-label">Your Message</label>
         </div>
 
         <button
           class="round-button form-button"
+          aria-label="Send email message"
           :disabled="sendDisabled"
           @click="sendMessage"
         >
