@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <Navbar />
-    <router-view />
+    <Home />
     <div class="has-text-align-center">
       <a
         class="round-button-footer"
@@ -29,10 +29,12 @@
 
 <script>
 import Navbar from '@/components/Navbar'
+import Home from '@/views/Home'
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    Home
   }
 }
 </script>
