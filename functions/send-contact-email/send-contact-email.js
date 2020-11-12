@@ -2,7 +2,6 @@ require('dotenv').config()
 const {
   MAILGUN_API_KEY,
   MAILGUN_DOMAIN,
-  FROM_EMAIL_ADDRESS,
   CONTACT_TO_EMAIL_ADDRESS
 } = process.env
 const mailgun = require('mailgun-js')({
@@ -23,13 +22,12 @@ exports.handler = async event => {
   if (!data.message || !data.contactName || !data.contactEmail) {
     return { statusCode: 422, body: 'Name, email, and message are required.' }
   }
-
   const mailgunData = {
-    from: FROM_EMAIL_ADDRESS,
+    from: `${data.contactName} <${data.contactEmail}>`,
     to: CONTACT_TO_EMAIL_ADDRESS,
-    'h:Reply-To': data.contactEmail,
+    replyTo: data.contactEmail,
     subject: `New contact from ${data.contactName}`,
-    text: `Name: ${data.contactName}\nEmail: ${data.contactEmail}\nMessage: ${data.message}`
+    text: `${data.message}`
   }
 
   return mailgun
