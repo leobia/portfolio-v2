@@ -5,6 +5,8 @@ Airtable.configure({
   endpointUrl: 'https://api.airtable.com',
   apiKey: AIRTABLE_API_KEY
 })
+
+console.log({ AIRTABLE_ID, AIRTABLE_API_KEY })
 const base = Airtable.base(AIRTABLE_ID)
 
 const table = base('files')
