@@ -1,5 +1,5 @@
 <template>
-  <img src="@/assets/logo.png" style="width: 3em" />
+  <img src="@/assets/logo.png" width="38" height="38" />
   <a class="nav-link" @click="scrollTo('#introduction')">INTRODUCTION</a>
   <a class="nav-link" @click="scrollTo('#work')">WORK</a>
   <a class="nav-link" @click="scrollTo('#contact')">CONTACT</a>
