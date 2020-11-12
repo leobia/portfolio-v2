@@ -5,15 +5,19 @@
     <div class="has-text-align-center">
       <a
         class="round-button-footer"
-        href="https://www.linkedin.com/in/leonardo-bianco-dev/"
+        aria-label="Open Linkedin Page"
         target="_blank"
+        href="https://www.linkedin.com/in/leonardo-bianco-dev/"
+        rel="noopener noreferrer"
       >
         <i class="icon-linkedin"></i>
       </a>
       <a
         class="round-button-footer"
-        href="https://github.com/leobia"
+        aria-label="Open Github Page"
         target="_blank"
+        href="https://github.com/leobia"
+        rel="noopener noreferrer"
       >
         <i class="icon-github"></i>
       </a>

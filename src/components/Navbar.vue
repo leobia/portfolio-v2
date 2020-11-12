@@ -17,7 +17,6 @@
       <NavbarLinks :darkMode="darkMode" @toggle-theme="switchTheme" />
     </Sidebar>
   </div>
-  <a style="display: none" :href="curriculumUrl"></a>
 </template>
 
 <style scoped></style>
@@ -77,6 +76,7 @@ export default {
       link.href = this.curriculumUrl
       link.download = this.fileName
       link.target = '_blank'
+      link.rel = 'noopener noreferrer'
       document.body.appendChild(link)
       link.click()
       link.remove()
