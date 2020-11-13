@@ -4,13 +4,14 @@ $button-box-shadow: var(--button-box-shadow);
 $button-box-shadow-hover: var(--button-box-shadow-hover);
 
 .main-button {
-  padding: 0.5em 1.7em;
+  padding: 0.4em 1em;
   background: $button-color-backup;
   background: $button-color-gradient;
   color: $body-background-color;
   border-radius: 50px;
   box-shadow: $button-box-shadow;
   cursor: pointer;
+  font-weight: normal;
 
   &:hover {
     animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);

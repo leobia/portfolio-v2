@@ -1,0 +1,12 @@
+.logo {
+  -webkit-transition: 1s -webkit-filter ease;
+  -moz-transition: 1s -moz-filter ease;
+  -moz-transition: 1s filter ease;
+  -ms-transition: 1s -ms-filter ease;
+  -o-transition: 1s -o-filter ease;
+  transition: 1s filter ease, 1s -webkit-filter ease;
+}
+
+.logo-dark {
+  filter: invert(1) !important;
+}
