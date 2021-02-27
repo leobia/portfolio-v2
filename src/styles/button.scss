@@ -12,6 +12,7 @@ $button-box-shadow-hover: var(--button-box-shadow-hover);
   box-shadow: $button-box-shadow;
   cursor: pointer;
   font-weight: normal;
+  width: 120px;
 
   &:hover {
     animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
@@ -23,6 +24,25 @@ $button-box-shadow-hover: var(--button-box-shadow-hover);
     box-shadow: $button-box-shadow-hover;
   }
 }
+
+
+.loading {
+  display: flex;
+  margin: auto;
+  border: 3px solid hsl(222, 100%, 85%);
+  border-left-color: hsl(222, 100%, 100%);
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  animation: donut-spin 1.2s linear infinite;
+}
+
+@keyframes donut-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 
 .round-button {
   background: $button-color-backup;

@@ -11,7 +11,10 @@
       <NavbarLinks :darkMode="darkMode" @toggle-theme="switchTheme" />
     </div>
     <div class="has-margin-left-auto">
-      <div class="main-button" @click="downloadCv">DOWNLOAD CV</div>
+      <div class="main-button" @click="downloadCv">
+        <div v-show="!isLoading">DOWNLOAD CV</div>
+        <div v-show="isLoading" class="loading"></div>
+      </div>
     </div>
     <Sidebar :menuOpen="menuOpen" @close="menuOpen = false">
       <NavbarLinks :darkMode="darkMode" @toggle-theme="switchTheme" />
@@ -32,7 +35,8 @@ export default {
     return {
       menuOpen: false,
       darkMode: false,
-      curriculumUrl: ''
+      curriculumUrl: '',
+      isLoading: false
     }
   },
 
@@ -51,6 +55,7 @@ export default {
     },
     async downloadCv() {
       if (!this.curriculumUrl) {
+        this.isLoading = true
         try {
           const response = await this.$http.get(
             '/.netlify/functions/get-curriculum'
@@ -63,8 +68,10 @@ export default {
 
             this.openCv()
           }
+          this.isLoading = false
         } catch (error) {
           console.error(error)
+          this.isLoading = false
         }
       } else {
         this.openCv()
