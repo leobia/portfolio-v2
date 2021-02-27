@@ -68,32 +68,32 @@ export default {
     async fetchRepos() {
       this.repoLoading = true
 
-      // setTimeout(async () => {
-      //   const response = await this.$http.get(
-      //     'https://api.github.com/users/leobia/repos'
-      //   )
-      //   this.repos = response.data
-      //
-      //   if (this.repos && this.repos.length) {
-      //     this.repos.sort((a, b) => {
-      //       return new Date(b.updated_at) - new Date(a.updated_at)
-      //     })
-      //
-      //     this.repos = this.repos.slice(0, 10)
-      //
-      //     for (let i = 0; i < this.repos.length; i++) {
-      //       const repo = this.repos[i]
-      //
-      //       const responseLanguages = await this.$http.get(repo.languages_url, {
-      //         headers: { Accept: 'application/vnd.github.v3+json' }
-      //       })
-      //
-      //       let languages = responseLanguages.data
-      //       repo.languages = Object.keys(languages)
-      //     }
-      //   }
-      //   this.repoLoading = false
-      // }, 500)
+      setTimeout(async () => {
+        const response = await this.$http.get(
+          'https://api.github.com/users/leobia/repos'
+        )
+        this.repos = response.data
+
+        if (this.repos && this.repos.length) {
+          this.repos.sort((a, b) => {
+            return new Date(b.updated_at) - new Date(a.updated_at)
+          })
+
+          this.repos = this.repos.slice(0, 10)
+
+          for (let i = 0; i < this.repos.length; i++) {
+            const repo = this.repos[i]
+
+            const responseLanguages = await this.$http.get(repo.languages_url, {
+              headers: { Accept: 'application/vnd.github.v3+json' }
+            })
+
+            let languages = responseLanguages.data
+            repo.languages = Object.keys(languages)
+          }
+        }
+        this.repoLoading = false
+      }, 500)
     }
   },
 
