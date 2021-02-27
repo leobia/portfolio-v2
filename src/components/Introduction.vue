@@ -1,20 +1,66 @@
 <template>
   <section id="introduction">
     <div class="section-content">
-      <h3>Hi! I'm Leonardo Bianco 👋</h3>
-      <h1><span class="slash">/</span> WEB DEVELOPER.</h1>
+      <h3
+        v-motion
+        :initial="{
+          scale: 0,
+          opacity: 0
+        }"
+        :enter="{
+          scale: 1,
+          opacity: 1
+        }"
+        :visible="{
+          scale: 1,
+          opacity: 1
+        }"
+      >
+        Hi! I'm Leonardo Bianco 👋
+      </h3>
+      <h1 v-motion-from-left><span class="slash">/</span> WEB DEVELOPER.</h1>
 
-      <p>
+      <p
+        v-motion
+        :initial="{
+          opacity: 0,
+          y: 160
+        }"
+        :enter="{
+          opacity: 1,
+          y: 0
+        }"
+        :visible="{
+          opacity: 1,
+          y: 0
+        }"
+      >
         I'm a web devoleper based in Firenze, Italy specializing in building
         enterprise web applications.
       </p>
-      <p>
+      <p
+        v-motion
+        :initial="{
+          opacity: 0,
+          y: 160
+        }"
+        :enter="{
+          opacity: 1,
+          y: 0
+        }"
+        :visible="{
+          opacity: 1,
+          y: 0
+        }"
+      >
         Right now I consider myself a
         <span class="border-marker border-marker-vue" @click="openVueSite"
           ><span>Vue</span></span
         >
         enthusiast, you can find most of my open source work on
-        <span class="border-marker border-marker-github" @click="openVueSite"
+        <span
+          class="border-marker border-marker-github"
+          @click="openRepositories"
           ><span>Github</span></span
         >
         built with it!

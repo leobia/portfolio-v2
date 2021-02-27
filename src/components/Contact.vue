@@ -1,9 +1,9 @@
 <template>
   <section>
     <div class="section-content" id="contact">
-      <h1><span class="slash">/</span> CONTACT.</h1>
+      <h1 v-motion-from-left><span class="slash">/</span> CONTACT.</h1>
 
-      <div class="contact-card">
+      <div class="contact-card" v-motion-from-left>
         <div class="form-group field">
           <input
             type="input"
