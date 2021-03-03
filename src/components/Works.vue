@@ -2,7 +2,7 @@
   <section id="work" class="section-repo">
     <div class="section-content has-padding-bottom-9-rem">
       <h1 class="has-text-align-end section-repos-title" v-motion-from-left>
-        <span class="slash">/</span> OS WORK.
+        <span class="slash">/</span> OPEN SOURCE.
       </h1>
       <div class="repo-container">
         <div
