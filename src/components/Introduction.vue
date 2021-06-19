@@ -4,35 +4,57 @@
       <h3
         v-motion
         :initial="{
-          scale: 0,
+          y: 100,
           opacity: 0
         }"
         :enter="{
-          scale: 1,
-          opacity: 1
-        }"
-        :visible="{
-          scale: 1,
-          opacity: 1
+          y: 0,
+          opacity: 1,
+          transition: {
+            type: 'spring',
+            stiffness: 350,
+            damping: 20,
+            delay: 50
+          }
         }"
       >
         Hi! I'm Leonardo Bianco 👋
       </h3>
-      <h1 v-motion-from-left><span class="slash">/</span> WEB DEVELOPER.</h1>
+      <h1
+        v-motion
+        :initial="{
+          y: 100,
+          opacity: 0
+        }"
+        :enter="{
+          y: 0,
+          opacity: 1,
+          transition: {
+            type: 'spring',
+            stiffness: 350,
+            damping: 20,
+            delay: 100
+          }
+        }"
+      >
+        <span class="slash">/</span> WEB DEVELOPER.
+      </h1>
 
       <p
         v-motion
         :initial="{
-          opacity: 0,
-          y: 160
+          y: 100,
+          opacity: 0
         }"
         :enter="{
+          y: 0,
           opacity: 1,
-          y: 0
-        }"
-        :visible="{
-          opacity: 1,
-          y: 0
+          transition: {
+            type: 'spring',
+            stiffness: 350,
+            damping: 20,
+            delay: 150
+          }
         }"
       >
         I'm a web devoleper based in Firenze, Italy specializing in building
@@ -41,16 +63,18 @@
       <p
         v-motion
         :initial="{
-          opacity: 0,
-          y: 160
+          y: 100,
+          opacity: 0
         }"
         :enter="{
+          y: 0,
           opacity: 1,
-          y: 0
-        }"
-        :visible="{
-          opacity: 1,
-          y: 0
+          transition: {
+            type: 'spring',
+            stiffness: 350,
+            damping: 20,
+            delay: 200
+          }
         }"
       >
         Right now I consider myself a

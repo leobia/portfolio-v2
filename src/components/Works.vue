@@ -16,11 +16,21 @@
           }"
           :enter="{
             opacity: 1,
-            y: 0
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 350,
+              damping: 20
+            }
           }"
           :visible="{
             opacity: 1,
-            y: 0
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 350,
+              damping: 20
+            }
           }"
         >
           <WorkCard :repo="repo" :loading="repoLoading"></WorkCard>
