@@ -11,7 +11,7 @@
       <NavbarLinks :darkMode="darkMode" @toggle-theme="switchTheme" />
     </div>
     <div class="has-margin-left-auto">
-      <a class="main-button" href="/files/cv_leonardo_bianco.pdf" download></a>
+      <a class="main-button" href="/files/cv_leonardo_bianco.pdf" download>Download CV</a>
     </div>
     <Sidebar :menuOpen="menuOpen" @close="menuOpen = false">
       <NavbarLinks :darkMode="darkMode" @toggle-theme="switchTheme" />
