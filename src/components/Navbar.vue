@@ -11,10 +11,7 @@
       <NavbarLinks :darkMode="darkMode" @toggle-theme="switchTheme" />
     </div>
     <div class="has-margin-left-auto">
-      <div class="main-button" @click="downloadCv">
-        <div v-show="!isLoading">DOWNLOAD CV</div>
-        <div v-show="isLoading" class="loading"></div>
-      </div>
+      <a class="main-button" href="/files/cv_leonardo_bianco.pdf" download></a>
     </div>
     <Sidebar :menuOpen="menuOpen" @close="menuOpen = false">
       <NavbarLinks :darkMode="darkMode" @toggle-theme="switchTheme" />
