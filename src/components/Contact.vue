@@ -3,7 +3,6 @@
     <div class="section-content" id="contact">
       <h1 v-motion-from-left><span class="slash">/</span> WORK.</h1>
 
-      <div class="contact-card" v-motion-from-left>
         <ul class="timeline">
           <li>
             <div class="timeline-start">1984</div>
@@ -95,7 +94,6 @@
           </li>
         </ul>
 
-      </div>
     </div>
   </section>
 </template>
