@@ -1,54 +1,100 @@
 <template>
   <section>
     <div class="section-content" id="contact">
-      <h1 v-motion-from-left><span class="slash">/</span> CONTACT.</h1>
+      <h1 v-motion-from-left><span class="slash">/</span> WORK.</h1>
 
       <div class="contact-card" v-motion-from-left>
-        <div class="form-group field">
-          <input
-            type="input"
-            class="form-field"
-            placeholder="Name"
-            name="name"
-            id="name"
-            v-model="name"
-            required
-          />
-          <label for="name" class="form-label">Your Name</label>
-        </div>
-        <div class="form-group field">
-          <input
-            type="email"
-            class="form-field"
-            placeholder="Email"
-            name="email"
-            id="email"
-            v-model="email"
-            required
-          />
-          <label for="email" class="form-label">Your Email</label>
-        </div>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-start">1984</div>
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="timeline-end timeline-box">First Macintosh computer</div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-start">1998</div>
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="timeline-end timeline-box">iMac</div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-start">2001</div>
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="timeline-end timeline-box">iPod</div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-start">2007</div>
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="timeline-end timeline-box">iPhone</div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-start">2015</div>
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="timeline-end timeline-box">Apple Watch</div>
+          </li>
+        </ul>
 
-        <div class="form-group field">
-          <textarea
-            class="form-field"
-            placeholder="Message"
-            name="message"
-            id="message"
-            v-model="message"
-            required
-          />
-          <label for="message" class="form-label">Your Message</label>
-        </div>
-
-        <button
-          class="round-button form-button"
-          aria-label="Send email message"
-          :disabled="sendDisabled"
-          @click="sendMessage"
-        >
-          <i class="icon-paper-plane"></i>
-        </button>
       </div>
     </div>
   </section>
