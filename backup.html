@@ -1,0 +1,39 @@
+<div class="flex flex-col lg:flex-row min-h-screen min-w-screen md:mx-12 md:p x-12 lg:mx-36 lg:px-36 px-60">
+
+      <!-- Colonna di sinistra (non scrollabile in desktop, nascosta in mobile) -->
+      <div class="hidden lg:block lg:w-1/2 lg:relative lg:top-0 mx-auto">
+        <div class="h-full w-1/2 p-4 lg:fixed lg:top-0 lg:flex lg:flex-col lg:justify-between lg:py-24">
+          <!-- Contenuto fisso -->
+          <div>
+            <IntroHeader />
+            <NavLinks />
+          </div>
+          <div>
+            <SocialIcons />
+          </div>
+        </div>
+      </div>
+
+      <!-- Colonna di destra (scrollabile in desktop e unica colonna in mobile) -->
+      <div class="flex-1 lg:w-1/2 overflow-y-auto p-4 mx-auto">
+        <div class="h-full lg:py-24">
+          <!-- Contenuto scrollabile -->
+          <div class="mt-4 space-y-4">
+            <!-- Aggiungi contenuto lungo per testare lo scroll -->
+            <div>
+              <p class="mb-4">Back in 2012, I decided to try my hand at creating custom Tumblr themes and tumbled head
+                first into the rabbit hole of coding and web development. Fast-forward to today, and I’ve had the
+                privilege of building software for andigital product studio.</p>
+              <p class="mb-4">My main focus these days is building accessible user interfaces for our customers
+                at Klaviyo. I most enjoy building software in the sweet
+                spot where design and engineering meet — things that look good but are also built well under the hood.
+                In my free time, I've also released anonline video
+                course that covers everything you need to know to build a web app with the Spotify API.
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
