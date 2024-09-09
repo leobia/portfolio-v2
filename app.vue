@@ -9,10 +9,11 @@
         <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"><a href="/">Leonardo Bianco</a></h1>
           <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">Software Developer</h2>
-          <p class="mt-4 max-w-xs leading-normal">I build enterprise web applications. You can find my italian CV <a
-              class="inline-flex items-baseline leading-tight underline text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link"
-              href="/files/cv_leonardo_bianco_it.pdf" download target="_blank" rel="noreferrer noopener">
-              here
+          <p class="mt-3 ">
+            <a href="/files/cv_leonardo_bianco_it.pdf" download target="_blank" rel="noreferrer noopener" class="inline-flex items-center py-2 px-4 rounded resume-button">
+              <span>
+                  GET RESUME
+              </span>
             </a>
           </p>
           <NavLinks />
@@ -105,3 +106,22 @@ const experiences = [
 ]
 
 </script>
+
+<style scoped>
+
+.resume-button {
+  color: #1D9AF2;
+  background-color: #292D3E;
+  border: 1px solid #1D9AF2;
+  border-radius: 4px;
+  padding: 0 15px;
+  cursor: pointer;
+  height:32px;
+  font-size:14px;
+  transition: all 0.2s ease-in-out;
+}
+.resume-button:hover {
+  box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
+  transform: translateX(-3px);
+}
+</style>
