@@ -30,7 +30,7 @@
               <p class="mb-4">
                 Currently my main focus is to improve as a developer by trying to work on challenging technologies and
                 products at
-                <a class="font-bold leading-tight text-light-blue hover:text-red focus-visible:text-red  group/link text-base"
+                <a class="font-bold leading-tight dark:text-light-blue hover:text-red focus-visible:text-red  group/link text-base"
                   href="https://www.eng.it/" target="_blank" rel="noreferrer noopener"
                   aria-label="Engineering Ingegneria Informatica (opens in a new tab)">
                   Engineering Ingegneria Informatica
