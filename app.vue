@@ -36,13 +36,6 @@
                   Engineering Ingegneria Informatica
                 </a>.
               </p>
-              <p class="mb-4">
-                I generally work with web technologies like <span class="font-bold">Javascript</span> (Vue, Angular),
-                <span class="font-bold">Java</span> (Spring) and <span class="font-bold">SQL</span>. I also like to
-                automate some task with a scripting language like Python.
-                In my own small way I also try to contribute to open source when I see web components that I use that
-                can be improved.
-              </p>
               <p>
                 When I'm not at the computer, I'm usually working out, listening to music, reading or hanging out with
                 my friends.</p>
