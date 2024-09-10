@@ -7,16 +7,15 @@
 
       <div class="lg:flex lg:justify-between lg:gap-4">
         <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-          <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"><a href="/">Leonardo Bianco</a></h1>
-          <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">Software Developer</h2>
-          <p class="mt-3 ">
-            <a href="/files/cv_leonardo_bianco_it.pdf" download target="_blank" rel="noreferrer noopener" class="inline-flex items-center py-2 px-4 rounded resume-button">
-              <span>
-                  GET RESUME
-              </span>
-            </a>
-          </p>
-          <NavLinks />
+          <div>
+            <h1 class="text-4xl font-bold tracking-tight sm:text-5xl"><a href="/">Leonardo Bianco</a>
+            </h1>
+            <h2 class="mt-3 text-lg font-medium tracking-tight sm:text-xl">Software Developer</h2>
+            <p class="mt-3 ">
+            <div>Currently building enterprise applications...</div>
+            </p>
+            <NavLinks />
+          </div>
           <SocialIcons />
         </header>
         <main class="pt-24 lg:w-1/2 lg:py-24">
@@ -31,7 +30,7 @@
               <p class="mb-4">
                 Currently my main focus is to improve as a developer by trying to work on challenging technologies and
                 products at
-                <a class="font-bold leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base"
+                <a class="font-bold leading-tight text-light-blue hover:text-red focus-visible:text-red  group/link text-base"
                   href="https://www.eng.it/" target="_blank" rel="noreferrer noopener"
                   aria-label="Engineering Ingegneria Informatica (opens in a new tab)">
                   Engineering Ingegneria Informatica
@@ -56,17 +55,17 @@
           </section>
           <footer class="max-w-md pb-16 text-sm text-slate-500 sm:pb-0">
             Design and layout inspired by <a
-              class="inline-flex items-baseline leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link"
+              class="inline-flex items-baseline leading-tight  hover:text-red focus-visible:text-red  group/link"
               href="https://github.com/bchiang7" target="_blank" rel="noreferrer noopener"
               aria-label="Brittany Chiang github (opens in a new tab)">
               Brittany Chiang
             </a>. Built with <a
-              class="inline-flex items-baseline leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link"
+              class="inline-flex items-baseline leading-tight  hover:text-red focus-visible:text-red  group/link"
               href="https://nuxt.com/" target="_blank" rel="noreferrer noopener"
               aria-label="Nuxt.js site (opens in a new tab)">
               Nuxt.js
             </a> and <a
-              class="inline-flex items-baseline leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link"
+              class="inline-flex items-baseline leading-tight  hover:text-red focus-visible:text-red  group/link"
               href="https://tailwindcss.com/" target="_blank" rel="noreferrer noopener"
               aria-label="Tailwind css site (opens in a new tab)">
               Tailwind
@@ -108,7 +107,6 @@ const experiences = [
 </script>
 
 <style scoped>
-
 .resume-button {
   color: #1D9AF2;
   background-color: #292D3E;
@@ -116,10 +114,11 @@ const experiences = [
   border-radius: 4px;
   padding: 0 15px;
   cursor: pointer;
-  height:32px;
-  font-size:14px;
+  height: 32px;
+  font-size: 14px;
   transition: all 0.2s ease-in-out;
 }
+
 .resume-button:hover {
   box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
   transform: translateX(-3px);

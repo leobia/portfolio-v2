@@ -11,11 +11,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        one: '#0a090c',
-        two: '#f0edee',
-        three: '#07393c',
-        four: '#2c666e',
-        five: '#90ddf0'
+        dark: '#0F1B2C',
+        light: '#F1FAEE',
+        red: '#E63946',
+        'red-400': '#BB4430',
+        'light-blue': '#E0F2F3',
+        cerulean: '#C6DAE6'
       }
     },
   },

@@ -5,7 +5,7 @@
 
 @layer base {
     html {
-        @apply text-two bg-one;
+        @apply dark:bg-dark bg-white dark:text-white text-dark;
         scroll-behavior: smooth;
     }
 }
