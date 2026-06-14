@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div id="top">
     <Ticker />
+    <Nav />
   </div>
 </template>
