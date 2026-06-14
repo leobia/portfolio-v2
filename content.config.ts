@@ -37,6 +37,27 @@ export default defineContentConfig({
         availability: z.string(),
       }),
     }),
+    about: defineCollection({
+      type: 'page',
+      source: 'about.md',
+      schema: z.object({
+        label: z.string(),
+        tagline: z.string(),
+      }),
+    }),
+    journey: defineCollection({
+      type: 'data',
+      source: 'journey.yml',
+      schema: z.object({
+        label: z.string(),
+        tagline: z.string(),
+        entries: z.array(z.object({
+          date: z.string(),
+          title: z.string(),
+          description: z.string(),
+        })),
+      }),
+    }),
     projects: defineCollection({
       type: 'data',
       source: 'projects.yml',

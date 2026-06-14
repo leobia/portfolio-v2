@@ -8,6 +8,12 @@ const { data: now } = await useAsyncData('now', () =>
 const { data: work } = await useAsyncData('projects', () =>
   queryCollection('projects').first(),
 )
+const { data: about } = await useAsyncData('about', () =>
+  queryCollection('about').first(),
+)
+const { data: journey } = await useAsyncData('journey', () =>
+  queryCollection('journey').first(),
+)
 </script>
 
 <template>
@@ -16,5 +22,7 @@ const { data: work } = await useAsyncData('projects', () =>
     <Nav />
     <Hero v-if="hero && now" :hero="hero" :now="now" />
     <Work v-if="work" :work="work" />
+    <About v-if="about" :about="about" />
+    <Journey v-if="journey" :journey="journey" />
   </div>
 </template>
