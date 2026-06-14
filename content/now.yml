@@ -1,0 +1,7 @@
+# Now board — fill these in. Values + updated date are placeholders.
+updated: "TODO"
+rows:
+  - { label: "Building", value: "TODO" }
+  - { label: "Learning", value: "TODO" }
+  - { label: "Reading", value: "TODO" }
+availability: "● Open to select work"

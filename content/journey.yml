@@ -1,0 +1,13 @@
+label: Journey
+tagline: // how I got here
+
+entries:
+  - date: "TODO"
+    title: "TODO — current role"
+    description: "TODO — what you're doing now: scope, stack, impact."
+  - date: "TODO"
+    title: "TODO — previous role"
+    description: "TODO — a prior chapter: team, problem space, what you shipped."
+  - date: "TODO"
+    title: "TODO — earlier role"
+    description: "TODO — where it started: first role or formative project."

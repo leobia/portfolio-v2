@@ -1,0 +1,27 @@
+# Selected Work — curated, non-public company projects.
+# Adding/reordering a project = edit this file only.
+# Per item:
+#   category, title, subtitle, description  (required)
+#   stack: [..]  role, year                (required for metadata footer)
+#   company                                (optional — real or anonymized)
+#   link                                   (optional — if present, footer shows
+#                                            "Explore Project →" instead of metadata)
+label: "Selected Work"
+tagline: "// systems that ship"
+items:
+  - category: "TODO / Category"
+    title: "TODO Project One"
+    subtitle: "TODO one-line summary."
+    description: "TODO — what it does, what was hard, what you owned."
+    company: "TODO Company"
+    role: "TODO Role"
+    year: "TODO"
+    stack: ["TODO", "TODO"]
+  - category: "TODO / Category"
+    title: "TODO Project Two"
+    subtitle: "TODO one-line summary."
+    description: "TODO — what it does, what was hard, what you owned."
+    company: "TODO Company"
+    role: "TODO Role"
+    year: "TODO"
+    stack: ["TODO", "TODO"]
