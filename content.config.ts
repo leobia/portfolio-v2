@@ -7,6 +7,12 @@ export default defineContentConfig({
       source: 'settings.yml',
       schema: z.object({
         ticker: z.array(z.string()),
+        seo: z.object({
+          title: z.string(),
+          description: z.string(),
+          url: z.string(),
+          image: z.string(),
+        }),
         nav: z.object({
           logo: z.string(),
           links: z.array(z.object({ label: z.string(), href: z.string() })),

@@ -5,7 +5,6 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Leonardo Bianco — Software Engineer',
       htmlAttrs: { lang: 'en' },
       meta: [
         { charset: 'utf-8' },

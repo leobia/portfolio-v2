@@ -4,8 +4,14 @@ ticker:
   - "// Backend · Web · Infra"
   - "// Based remote, global"
 
+seo:
+  title: "Leonardo Bianco — Web Developer"
+  description: "Leonardo Bianco, web developer based in Firenze. Robust products, clean architecture, fast and accessible interfaces — from backend services to the last pixel."
+  url: "https://leonardobianco.dev"
+  image: "/og.png"
+
 nav:
-  logo: "Your Name"
+  logo: "Leonardo Bianco"
   links:
     - { label: "Work", href: "#work" }
     - { label: "About", href: "#about" }

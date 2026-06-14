@@ -8,6 +8,8 @@
 
 html {
   scroll-behavior: smooth;
+  // offset anchored sections below the sticky nav
+  scroll-padding-top: 80px;
 }
 
 html,
