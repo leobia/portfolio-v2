@@ -14,6 +14,9 @@ const { data: about } = await useAsyncData('about', () =>
 const { data: journey } = await useAsyncData('journey', () =>
   queryCollection('journey').first(),
 )
+const { data: contact } = await useAsyncData('contact', () =>
+  queryCollection('contact').first(),
+)
 </script>
 
 <template>
@@ -24,5 +27,6 @@ const { data: journey } = await useAsyncData('journey', () =>
     <Work v-if="work" :work="work" />
     <About v-if="about" :about="about" />
     <Journey v-if="journey" :journey="journey" />
+    <Contact v-if="contact" :contact="contact" />
   </div>
 </template>

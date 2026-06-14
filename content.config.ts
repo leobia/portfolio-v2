@@ -58,6 +58,24 @@ export default defineContentConfig({
         })),
       }),
     }),
+    contact: defineCollection({
+      type: 'data',
+      source: 'contact.yml',
+      schema: z.object({
+        label: z.string(),
+        tagline: z.string(),
+        heading: z.string(),
+        body: z.string(),
+        email: z.string(),
+        cv: z.object({ label: z.string(), file: z.string() }),
+        socials: z.array(z.object({ label: z.string(), href: z.string() })),
+        form: z.object({
+          name: z.string(),
+          fields: z.object({ name: z.string(), email: z.string(), message: z.string() }),
+          submit: z.string(),
+        }),
+      }),
+    }),
     projects: defineCollection({
       type: 'data',
       source: 'projects.yml',
