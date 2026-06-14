@@ -14,5 +14,28 @@ export default defineContentConfig({
         }),
       }),
     }),
+    hero: defineCollection({
+      type: 'data',
+      source: 'hero.yml',
+      schema: z.object({
+        eyebrow: z.string(),
+        headline: z.object({ lead: z.string(), accent: z.string() }),
+        body: z.string(),
+        tags: z.array(z.string()),
+        buttons: z.object({
+          primary: z.object({ label: z.string(), href: z.string() }),
+          secondary: z.object({ label: z.string(), href: z.string() }),
+        }),
+      }),
+    }),
+    now: defineCollection({
+      type: 'data',
+      source: 'now.yml',
+      schema: z.object({
+        updated: z.string(),
+        rows: z.array(z.object({ label: z.string(), value: z.string() })),
+        availability: z.string(),
+      }),
+    }),
   },
 })
