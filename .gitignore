@@ -2,6 +2,12 @@
 node_modules
 /dist
 
+# Nuxt
+.nuxt
+.output
+.data
+dist
+
 
 # local env files
 .env.local
@@ -23,3 +29,6 @@ pnpm-debug.log*
 *.sw?
 
 .env
+
+# WSL metadata
+*:Zone.Identifier

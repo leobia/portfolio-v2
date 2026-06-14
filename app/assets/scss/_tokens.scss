@@ -1,0 +1,53 @@
+// Design tokens — from new-design/README.md
+// Exposed as CSS custom properties (global) + SCSS vars (for use in additionalData).
+
+:root {
+  // Accent
+  --accent: oklch(0.58 0.21 27);            // #d93b29 — ticker, buttons, bullets
+  --accent-hover: oklch(0.52 0.21 27);      // #c5331f — button/contact hover
+  --accent-text: oklch(0.5 0.2 27);         // #bb3420 — eyebrow, labels
+  --accent-tint-bg: oklch(0.58 0.21 27 / 0.08);
+  --accent-tint-border: oklch(0.58 0.21 27 / 0.25);
+  --accent-hover-border: oklch(0.58 0.21 27 / 0.5);
+
+  // Ink / text
+  --ink: #0a0a0a;          // headings, primary text
+  --value-text: #1a1a1a;   // now-board values
+  --body: #4d4d4d;         // hero paragraph
+  --body-2: #5d5d5d;       // card descriptions
+  --chip-text: #333333;
+
+  // Mono / muted grays
+  --mono-muted: #707070;
+  --mono-muted-2: #777777;
+  --mono-faint: #9a9a9a;
+  --mono-faint-2: #a0a0a0;
+  --mono-faint-3: #aaaaaa;
+  --index-gray: #c4c4c4;
+
+  // Surfaces & borders
+  --surface: #ffffff;
+  --border-strong: #e2e2e2;
+  --border-strong-2: #e6e6e6;
+  --border-soft: #ececec;
+  --border-soft-2: #eeeeee;
+
+  // Radii
+  --radius-round: 999px;
+  --radius-lg: 16px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --radius-xs: 8px;
+
+  // Shadow
+  --shadow-board: 0 24px 60px -34px rgba(0, 0, 0, 0.35);
+
+  // Layout
+  --max-width: 1280px;
+  --pad-x: 48px;
+
+  // Fonts
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Hanken Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
