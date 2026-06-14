@@ -6,7 +6,7 @@ export interface SiteSeo {
 }
 
 function absoluteUrl(base: string, path: string): string {
-  if (/^https?:\/\//.test(path)) return path
+  if (/^(https?:)?\/\//.test(path)) return path
   return `${base.replace(/\/$/, '')}/${path.replace(/^\//, '')}`
 }
 

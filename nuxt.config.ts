@@ -25,14 +25,4 @@ export default defineNuxtConfig({
       { name: 'JetBrains Mono', provider: 'google', weights: [400, 500, 600] },
     ],
   },
-
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@use "~/assets/scss/tokens" as *;\n',
-        },
-      },
-    },
-  },
 })

@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const { data: settings } = await useAsyncData('settings', () =>
-  queryCollection('settings').first(),
-)
+const { data: settings } = await useSettings()
 
 const open = ref(false)
 

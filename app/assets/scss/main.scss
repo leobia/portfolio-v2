@@ -1,4 +1,5 @@
-// Global styles. Tokens are auto-injected via vite additionalData.
+// Global styles. Tokens (CSS custom properties) are emitted once here.
+@use 'tokens';
 
 *,
 *::before,
