@@ -46,5 +46,6 @@ useSeoMeta({
     <About v-if="about" :about="about" />
     <Journey v-if="journey" :journey="journey" />
     <Contact v-if="contact" :contact="contact" />
+    <Footer />
   </div>
 </template>
