@@ -3,6 +3,18 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-01-01',
   ssr: true,
 
+  app: {
+    head: {
+      title: 'Leonardo Bianco — Software Engineer',
+      htmlAttrs: { lang: 'en' },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      ],
+      link: [{ rel: 'icon', href: '/favicon.ico' }],
+    },
+  },
+
   modules: ['@nuxt/content', '@nuxt/fonts'],
 
   css: ['~/assets/scss/main.scss'],
