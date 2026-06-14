@@ -5,6 +5,9 @@ const { data: hero } = await useAsyncData('hero', () =>
 const { data: now } = await useAsyncData('now', () =>
   queryCollection('now').first(),
 )
+const { data: work } = await useAsyncData('projects', () =>
+  queryCollection('projects').first(),
+)
 </script>
 
 <template>
@@ -12,5 +15,6 @@ const { data: now } = await useAsyncData('now', () =>
     <Ticker />
     <Nav />
     <Hero v-if="hero && now" :hero="hero" :now="now" />
+    <Work v-if="work" :work="work" />
   </div>
 </template>

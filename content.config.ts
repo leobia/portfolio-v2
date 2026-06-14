@@ -37,5 +37,24 @@ export default defineContentConfig({
         availability: z.string(),
       }),
     }),
+    projects: defineCollection({
+      type: 'data',
+      source: 'projects.yml',
+      schema: z.object({
+        label: z.string(),
+        tagline: z.string(),
+        items: z.array(z.object({
+          category: z.string(),
+          title: z.string(),
+          subtitle: z.string(),
+          description: z.string(),
+          link: z.string().optional(),
+          company: z.string().optional(),
+          role: z.string(),
+          year: z.string(),
+          stack: z.array(z.string()),
+        })),
+      }),
+    }),
   },
 })
