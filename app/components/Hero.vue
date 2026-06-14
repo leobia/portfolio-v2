@@ -110,12 +110,12 @@ defineProps<{
 }
 
 .hero__chip {
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-xs);
-  padding: 9px 14px;
+  background: var(--chip-bg);
+  border-radius: var(--radius-round);
+  padding: 7px 13px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--chip-text);
 }

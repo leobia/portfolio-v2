@@ -149,16 +149,18 @@ defineProps<{ contact: ContactContent }>()
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: #fff;
   text-decoration: none;
-  border: 1px solid var(--border-soft);
+  background: var(--accent);
+  border: 1px solid var(--accent);
   border-radius: var(--radius-sm);
-  padding: 12px 18px;
+  padding: 14px 22px;
   margin-bottom: 28px;
-  transition: border-color 150ms ease;
+  transition: background 150ms ease, border-color 150ms ease;
 
   &:hover {
-    border-color: var(--accent-hover-border);
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
   }
 }
 
@@ -185,6 +187,7 @@ defineProps<{ contact: ContactContent }>()
   display: flex;
   flex-direction: column;
   gap: 18px;
+  background: var(--card-bg);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-md);
   padding: 30px;

@@ -88,6 +88,7 @@ const meta = (p: Project) =>
 }
 
 .card {
+  background: var(--card-bg);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-md);
   padding: 30px;

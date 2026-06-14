@@ -81,11 +81,11 @@ defineProps<{ journey: JourneyContent }>()
   &::before {
     content: '';
     position: absolute;
-    left: 110px;
+    left: 109px;
     top: 8px;
     bottom: -8px;
-    width: 1px;
-    background: var(--border-soft);
+    width: 2px;
+    background: var(--index-gray);
   }
 
   &:last-child::before {
@@ -138,7 +138,7 @@ defineProps<{ journey: JourneyContent }>()
     gap: 14px;
 
     &::before {
-      left: 78px;
+      left: 77px;
     }
 
     &::after {

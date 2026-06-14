@@ -16,6 +16,7 @@
   --body: #4d4d4d;         // hero paragraph
   --body-2: #5d5d5d;       // card descriptions
   --chip-text: #333333;
+  --chip-bg: #f1f1f1; // solid tag background
 
   // Mono / muted grays
   --mono-muted: #707070;
@@ -31,6 +32,9 @@
   --border-strong-2: #e6e6e6;
   --border-soft: #ececec;
   --border-soft-2: #eeeeee;
+  --card-bg: #ffffff; // solid card surface (covers grid)
+  --grid-line: rgba(10, 10, 10, 0.035); // faint background grid line
+  --grid-size: 28px; // grid cell size
 
   // Radii
   --radius-round: 999px;

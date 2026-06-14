@@ -19,7 +19,11 @@ body {
 }
 
 body {
-  background: var(--surface);
+  background-color: var(--surface);
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
   color: var(--ink);
   font-family: 'Hanken Grotesk', sans-serif;
   -webkit-font-smoothing: antialiased;
