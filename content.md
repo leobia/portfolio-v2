@@ -1,5 +1,44 @@
 ## Journey
 
+- SOFTWARE DEVELOPER
+Omnia Service Srl | Firenze, Italia | Marzo 2017 – Maggio 2019
+Durante la mia esperienza professionale ho:
+- Progettato, sviluppato e testato applicazioni software in Java, garantendo la piena aderenza alle specifiche e ai
+requisiti del cliente
+- Gestito e versionato il codice utilizzando GIT e SVN, facilitando la collaborazione efficace all'interno di un team di
+8 sviluppatori
+- Collaborato strettamente con i gruppi di supporto tecnico per identificare e risolvere tempestivamente
+problemi e bug, migliorando la stabilità delle applicazioni in produzione.
+
+SOFTWARE DEVELOPER
+Bridge Consulting | Firenze, Italia | Maggio 2019 – Maggio 2022
+- Progettato e sviluppato applicazioni software utilizzando tecnologie
+come Spring Boot, Docker, Vue.js, JavaScript e SQL
+- Sviluppato un tool per l'automatizzazione della generazione di report
+su impianti industriali, riducendo i tempi di consegna dei report
+- Partecipato attivamente alla revisione del codice, garantendo elevati
+standard di sicurezza del codice.
+- Collaborato con team di ingegneri e project manager per comprendere
+le esigenze dei clienti e tradurle in soluzioni software efficaci, migliorando
+il processo di sviluppo e consegna dei progetti.
+
+SOLUTION DEVELOPER
+Engineering Ingegneria Informatica | Firenze, Italia | Maggio 2022 – Marzo 2024
+- Progettato e sviluppato applicazione web full-stack utilizzando Angular e
+Java (Spring Boot) negli ambiti di sanità e finanza
+- Collaborato con team multidisciplinari per consegnare prodotti di alta
+qualità ed in linea con le richieste dei vari clienti
+- Sviluppato e ottimizzato database relazionali (Oracle, Microsoft SQL
+server e PostgreSQL)
+- Guidato il processo di riscrittura di un gestionale documentale per
+portarlo da un’architettura molto vecchia ad uno stack moderno con
+Angular e Spring Boot
+- Guidato e formato 2 sviluppatori junior, aiutandoli a integrarsi
+rapidamente nel team
+
+Software Developer
+Opus, Savino del Bene | Firenze, Italia | Marzo 2024 – adesso
+- Main software developer della startup
 
 
 ## Progetti:
@@ -22,5 +61,7 @@ Engineering mid:
 
 Opus 4 Plus, Savino del bene:
 Qui si tratta di una startup quindi tutti i progetti ruotano intorno alla piattaforma di spedizioni.
+- Effettuata migrazione kubernetes da vecchia piattaforma dei consulenti ad aks proprietario azienda
+- sviluppato ci/cd per tutti i progetti
 - Partecipato allo sviluppo di una piattaforma 4Pl per la gestione ed il tracking di spedizioni B2B
 - Sviluppato una piattaforma simil excel
