@@ -24,6 +24,7 @@ defineProps<{ contact: ContactContent }>()
       <span class="contact__tagline">{{ contact.tagline }}</span>
     </div>
     <div class="contact__body-wrap">
+      <img class="contact__avatar" src="/profile.jpg" alt="Leonardo Bianco" />
       <h2 class="contact__heading">{{ contact.heading }}</h2>
       <p class="contact__body">{{ contact.body }}</p>
       <a class="contact__email" :href="`mailto:${contact.email}`">{{ contact.email }}</a>
@@ -105,6 +106,16 @@ defineProps<{ contact: ContactContent }>()
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--mono-faint);
+}
+
+.contact__avatar {
+  display: block;
+  width: 88px;
+  height: 88px;
+  border-radius: var(--radius-round);
+  object-fit: cover;
+  object-position: center 28%;
+  margin-bottom: 20px;
 }
 
 .contact__heading {

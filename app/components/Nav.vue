@@ -11,7 +11,8 @@ function close() {
 <template>
   <header class="nav">
     <a class="nav__logo" href="#top" @click="close">
-      <span class="nav__bullet">●</span> {{ settings?.nav.logo }}
+      <img class="nav__avatar" src="/profile.jpg" alt="Leonardo Bianco" />
+      {{ settings?.nav.logo }}
     </a>
 
     <nav class="nav__links" :class="{ 'nav__links--open': open }">
@@ -59,6 +60,9 @@ function close() {
 }
 
 .nav__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-mono);
   font-size: 12.5px;
   font-weight: 600;
@@ -66,6 +70,14 @@ function close() {
   text-transform: uppercase;
   color: var(--ink);
   text-decoration: none;
+}
+
+.nav__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-round);
+  object-fit: cover;
+  object-position: center 28%;
 }
 
 .nav__bullet {
