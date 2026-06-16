@@ -16,17 +16,19 @@ defineProps<{ journey: JourneyContent }>()
 
 <template>
   <section id="journey" class="journey">
-    <div class="journey__header">
-      <span class="journey__label">{{ journey.label }}</span>
-      <span class="journey__tagline">{{ journey.tagline }}</span>
-    </div>
+    <h2 v-reveal class="journey__title">{{ journey.label }}</h2>
 
     <ol class="journey__list">
-      <li v-for="entry in journey.entries" :key="entry.date + entry.title" class="journey__entry">
-        <span class="journey__date">{{ entry.date }}</span>
-        <div class="journey__body">
-          <h3 class="journey__title">{{ entry.title }}</h3>
-          <p class="journey__desc">{{ entry.description }}</p>
+      <li
+        v-for="(entry, i) in journey.entries"
+        :key="entry.date + entry.title"
+        v-reveal="i * 70"
+        class="entry"
+      >
+        <span class="entry__date">{{ entry.date }}</span>
+        <div class="entry__body">
+          <h3 class="entry__role">{{ entry.title }}</h3>
+          <p class="entry__desc">{{ entry.description }}</p>
         </div>
       </li>
     </ol>
@@ -37,117 +39,72 @@ defineProps<{ journey: JourneyContent }>()
 .journey {
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: 96px var(--pad-x);
+  border-top: 1px solid var(--line);
 }
 
-.journey__header {
-  border-top: 1px solid var(--border-soft);
-  margin: 0 var(--pad-x);
-  padding: 28px 0 8px;
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-}
-
-.journey__label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent-text);
-}
-
-.journey__tagline {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--mono-faint);
+.journey__title {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  margin-bottom: 48px;
 }
 
 .journey__list {
   list-style: none;
   margin: 0;
-  padding: 24px var(--pad-x) 72px;
+  padding: 0;
 }
 
-.journey__entry {
-  position: relative;
+.entry {
   display: grid;
-  grid-template-columns: 96px 1fr;
-  gap: 28px;
-  padding: 0 0 36px 0;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  padding: 34px 0;
+  border-top: 1px solid var(--line);
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: 109px;
-    top: 8px;
-    bottom: -8px;
-    width: 2px;
-    background: var(--index-gray);
-  }
-
-  &:last-child::before {
-    display: none;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 107px;
-    top: 6px;
-    width: 7px;
-    height: 7px;
-    border-radius: var(--radius-round);
-    background: var(--accent);
+  &:last-child {
+    border-bottom: 1px solid var(--line);
   }
 }
 
-.journey__date {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--mono-muted);
-  padding-top: 1px;
-}
-
-.journey__body {
-  padding-left: 22px;
-}
-
-.journey__title {
+.entry__date {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 19px;
-  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--accent-ink);
+}
+
+.entry__role {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
   color: var(--ink);
 }
 
-.journey__desc {
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--body-2);
+.entry__desc {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.62;
+  color: var(--ink-2);
+  max-width: 64ch;
 }
 
 @media (max-width: 700px) {
-  .journey__entry {
-    grid-template-columns: 64px 1fr;
-    gap: 14px;
-
-    &::before {
-      left: 77px;
-    }
-
-    &::after {
-      left: 75px;
-    }
+  .journey {
+    padding: 64px var(--pad-x);
   }
 
-  .journey__body {
-    padding-left: 16px;
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .entry__date {
+    font-size: 16px;
   }
 }
 </style>

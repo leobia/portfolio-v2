@@ -47,8 +47,8 @@ export default defineContentConfig({
       type: 'page',
       source: 'about.md',
       schema: z.object({
-        label: z.string(),
-        tagline: z.string(),
+        heading: z.string(),
+        kicker: z.string().optional(),
       }),
     }),
     journey: defineCollection({
@@ -88,6 +88,7 @@ export default defineContentConfig({
       schema: z.object({
         label: z.string(),
         tagline: z.string(),
+        intro: z.string().optional(),
         items: z.array(z.object({
           category: z.string(),
           title: z.string(),

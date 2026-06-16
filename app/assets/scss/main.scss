@@ -9,8 +9,7 @@
 
 html {
   scroll-behavior: smooth;
-  // offset anchored sections below the sticky nav
-  scroll-padding-top: 80px;
+  scroll-padding-top: 88px; // offset anchored sections below the sticky nav
 }
 
 html,
@@ -19,27 +18,74 @@ body {
   padding: 0;
 }
 
+// NOTE: literal font-family names below are required so @nuxt/fonts detects
+// and self-hosts them (it does not resolve CSS-var values). Component styles
+// then reference the same families via --font-* tokens.
 body {
-  background-color: var(--surface);
-  background-image:
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: var(--grid-size) var(--grid-size);
+  background-color: var(--paper);
   color: var(--ink);
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Geist', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 h1,
 h2,
-h3 {
-  font-family: 'Space Grotesk', sans-serif;
+h3,
+h4 {
+  font-family: 'Bricolage Grotesque', sans-serif;
   margin: 0;
+  font-weight: 700;
+}
+
+// Literal reference so 'Geist Mono' is picked up by @nuxt/fonts.
+code,
+kbd,
+samp,
+pre {
+  font-family: 'Geist Mono', monospace;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--pad-x);
+}
+
+// ── Scroll-reveal (driven by v-reveal directive via IntersectionObserver) ──
+// Only hide when JS is available to reveal it (.js set in <head> before paint).
+.js .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

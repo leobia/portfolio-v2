@@ -10,38 +10,41 @@ function close() {
 
 <template>
   <header class="nav">
-    <a class="nav__logo" href="#top" @click="close">
-      <img class="nav__avatar" src="/profile.jpg" alt="Leonardo Bianco" />
-      {{ settings?.nav.logo }}
-    </a>
+    <div class="nav__inner">
+      <a class="nav__logo" href="#top" @click="close">
+        <span class="nav__avatar">
+          <img src="/profile.png" alt="Leonardo Bianco" />
+        </span>
+        <span class="nav__wordmark">{{ settings?.nav.logo }}</span>
+      </a>
 
-    <nav class="nav__links" :class="{ 'nav__links--open': open }">
+      <nav class="nav__links" :class="{ 'nav__links--open': open }">
+        <a
+          v-for="link in settings?.nav.links"
+          :key="link.href"
+          class="nav__link"
+          :href="link.href"
+          @click="close"
+        >{{ link.label }}</a>
+      </nav>
+
       <a
-        v-for="link in settings?.nav.links"
-        :key="link.href"
-        class="nav__link"
-        :href="link.href"
+        class="nav__cta"
+        :href="settings?.nav.contact.href"
         @click="close"
-      >{{ link.label }}</a>
-    </nav>
+      >{{ settings?.nav.contact.label }}</a>
 
-    <a
-      class="nav__contact"
-      :href="settings?.nav.contact.href"
-      @click="close"
-    >{{ settings?.nav.contact.label }}</a>
-
-    <button
-      class="nav__toggle"
-      type="button"
-      :aria-expanded="open"
-      aria-label="Toggle menu"
-      @click="open = !open"
-    >
-      <span class="nav__toggle-bar" />
-      <span class="nav__toggle-bar" />
-      <span class="nav__toggle-bar" />
-    </button>
+      <button
+        class="nav__toggle"
+        type="button"
+        :aria-expanded="open"
+        aria-label="Toggle menu"
+        @click="open = !open"
+      >
+        <span class="nav__toggle-bar" />
+        <span class="nav__toggle-bar" />
+      </button>
+    </div>
   </header>
 </template>
 
@@ -49,75 +52,95 @@ function close() {
 .nav {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 68px;
+  padding: 0 var(--pad-x);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px var(--pad-x);
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-soft-2);
+  gap: 24px;
 }
 
 .nav__logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink);
+  gap: 11px;
   text-decoration: none;
+  color: var(--ink);
 }
 
 .nav__avatar {
-  width: 30px;
-  height: 30px;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-round);
-  object-fit: cover;
-  object-position: center 28%;
+  overflow: hidden;
+  background: var(--accent); // shows through the cutout, matches the per-load accent
 }
 
-.nav__bullet {
-  color: var(--accent);
+.nav__avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  // Zoom the cutout so the figure fills the circle instead of floating in it.
+  transform: scale(1.18);
+  transform-origin: center 12%;
+}
+
+.nav__wordmark {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .nav__links {
   display: flex;
+  align-items: center;
   gap: 30px;
 }
 
 .nav__link {
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--mono-muted);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
   text-decoration: none;
-  transition: color 150ms ease;
+  transition: color 150ms var(--ease);
 
   &:hover {
     color: var(--ink);
   }
 }
 
-.nav__contact {
+.nav__cta {
   font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  background: var(--accent);
-  color: #fff;
-  border-radius: var(--radius-round);
-  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius);
+  padding: 10px 18px;
   text-decoration: none;
-  transition: background 150ms ease;
+  transition: background 150ms var(--ease), transform 150ms var(--ease);
 
   &:hover {
-    background: var(--accent-hover);
+    background: var(--accent);
+  }
+
+  &:active {
+    transform: translateY(1px);
   }
 }
 
@@ -138,10 +161,10 @@ function close() {
   background: var(--ink);
 }
 
-@media (max-width: 900px) {
-  .nav__contact {
+@media (max-width: 860px) {
+  .nav__cta {
     margin-left: auto;
-    margin-right: 14px;
+    margin-right: 12px;
   }
 
   .nav__toggle {
@@ -154,23 +177,28 @@ function close() {
     left: 0;
     right: 0;
     flex-direction: column;
+    align-items: flex-start;
     gap: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-soft-2);
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
     padding: 0 var(--pad-x);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 200ms ease, padding 200ms ease;
+    transition: max-height 220ms var(--ease), padding 220ms var(--ease);
   }
 
   .nav__links--open {
-    max-height: 320px;
-    padding: 12px var(--pad-x) 20px;
+    max-height: 340px;
+    padding: 10px var(--pad-x) 20px;
   }
 
   .nav__link {
-    padding: 12px 0;
+    padding: 13px 0;
+    font-size: 14px;
+  }
+
+  .nav__wordmark {
+    display: none; // avatar is the logo on small screens; full wordmark on desktop + footer
   }
 }
 </style>

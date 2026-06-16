@@ -19,16 +19,14 @@ defineProps<{ contact: ContactContent }>()
 
 <template>
   <section id="contact" class="contact">
-    <div class="contact__header">
-      <span class="contact__label">{{ contact.label }}</span>
-      <span class="contact__tagline">{{ contact.tagline }}</span>
-    </div>
-    <div class="contact__body-wrap">
-      <img class="contact__avatar" src="/profile.jpg" alt="Leonardo Bianco" />
+    <div v-reveal class="contact__intro">
       <h2 class="contact__heading">{{ contact.heading }}</h2>
       <p class="contact__body">{{ contact.body }}</p>
       <a class="contact__email" :href="`mailto:${contact.email}`">{{ contact.email }}</a>
-      <a class="contact__cv" :href="contact.cv.file" download>{{ contact.cv.label }} &nbsp;↓</a>
+      <a class="contact__cv" :href="contact.cv.file" download>
+        {{ contact.cv.label }}
+        <span aria-hidden="true">&#8595;</span>
+      </a>
       <div class="contact__socials">
         <a
           v-for="social in contact.socials"
@@ -42,6 +40,7 @@ defineProps<{ contact: ContactContent }>()
     </div>
 
     <form
+      v-reveal="100"
       class="contact__form"
       :name="contact.form.name"
       method="post"
@@ -53,16 +52,16 @@ defineProps<{ contact: ContactContent }>()
         <label>Don't fill this out: <input name="bot-field" /></label>
       </p>
 
-      <label class="contact__field">
-        <span class="contact__field-label">{{ contact.form.fields.name }}</span>
-        <input type="text" name="name" required />
+      <label class="field">
+        <span class="field__label">{{ contact.form.fields.name }}</span>
+        <input type="text" name="name" autocomplete="name" required />
       </label>
-      <label class="contact__field">
-        <span class="contact__field-label">{{ contact.form.fields.email }}</span>
-        <input type="email" name="email" required />
+      <label class="field">
+        <span class="field__label">{{ contact.form.fields.email }}</span>
+        <input type="email" name="email" autocomplete="email" required />
       </label>
-      <label class="contact__field">
-        <span class="contact__field-label">{{ contact.form.fields.message }}</span>
+      <label class="field">
+        <span class="field__label">{{ contact.form.fields.message }}</span>
         <textarea name="message" rows="5" required></textarea>
       </label>
 
@@ -75,133 +74,102 @@ defineProps<{ contact: ContactContent }>()
 .contact {
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: 96px var(--pad-x);
+  border-top: 1px solid var(--line);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 56px;
-  padding: 16px var(--pad-x) 96px;
+  gap: 64px;
   align-items: start;
 }
 
-.contact__header {
-  grid-column: 1 / -1;
-  border-top: 1px solid var(--border-soft);
-  padding: 28px 0 8px;
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-}
-
-.contact__label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent-text);
-}
-
-.contact__tagline {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--mono-faint);
-}
-
-.contact__avatar {
-  display: block;
-  width: 88px;
-  height: 88px;
-  border-radius: var(--radius-round);
-  object-fit: cover;
-  object-position: center 28%;
-  margin-bottom: 20px;
-}
-
 .contact__heading {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 34px;
-  line-height: 1.15;
-  margin: 0 0 16px;
-  color: var(--ink);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  margin: 0 0 20px;
 }
 
 .contact__body {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--body);
-  margin: 0 0 28px;
-  max-width: 42ch;
+  margin: 0 0 30px;
+  font-size: 18px;
+  line-height: 1.62;
+  color: var(--ink-2);
+  max-width: 44ch;
 }
 
 .contact__email {
   display: block;
   width: fit-content;
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 15px;
   color: var(--ink);
   text-decoration: none;
-  border-bottom: 1px solid var(--accent-tint-border);
+  border-bottom: 1px solid var(--accent-line);
   padding-bottom: 2px;
-  margin-bottom: 24px;
-  transition: color 150ms ease;
+  margin-bottom: 30px;
+  transition: color 150ms var(--ease);
 
   &:hover {
-    color: var(--accent-text);
+    color: var(--accent-ink);
   }
 }
 
 .contact__cv {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   width: fit-content;
   font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--on-accent);
   text-decoration: none;
   background: var(--accent);
   border: 1px solid var(--accent);
-  border-radius: var(--radius-sm);
-  padding: 14px 22px;
-  margin-bottom: 28px;
-  transition: background 150ms ease, border-color 150ms ease;
+  border-radius: var(--radius);
+  padding: 13px 22px;
+  margin-bottom: 32px;
+  transition: background 150ms var(--ease), border-color 150ms var(--ease);
 
   &:hover {
     background: var(--accent-hover);
     border-color: var(--accent-hover);
   }
+
+  &:active {
+    transform: translateY(1px);
+  }
 }
 
 .contact__socials {
   display: flex;
-  gap: 18px;
+  gap: 22px;
 }
 
 .contact__social {
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--mono-muted);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
   text-decoration: none;
-  transition: color 150ms ease;
+  transition: color 150ms var(--ease);
 
   &:hover {
-    color: var(--accent-text);
+    color: var(--ink);
   }
 }
 
+// ── Form ──
 .contact__form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  background: var(--card-bg);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-md);
-  padding: 30px;
+  gap: 20px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 36px;
 }
 
 .contact__hp {
@@ -209,65 +177,70 @@ defineProps<{ contact: ContactContent }>()
   left: -9999px;
 }
 
-.contact__field {
+.field {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.contact__field-label {
+.field__label {
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.1em;
+  font-size: 11px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--mono-muted-2);
+  color: var(--ink-2); // AA on the paper-2 form panel
 }
 
-.contact__field input,
-.contact__field textarea {
-  font-family: var(--font-mono);
-  font-size: 14px;
+.field input,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: 15px;
   color: var(--ink);
-  background: transparent;
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-xs);
-  padding: 12px 14px;
-  transition: border-color 150ms ease;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 13px 15px;
+  transition: border-color 150ms var(--ease), box-shadow 150ms var(--ease);
 
   &:focus {
     outline: none;
-    border-color: var(--accent-hover-border);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-tint);
   }
 }
 
-.contact__field textarea {
+.field textarea {
   resize: vertical;
 }
 
 .contact__submit {
   align-self: flex-start;
   font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--accent);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--paper);
+  background: var(--ink);
   border: none;
-  border-radius: var(--radius-sm);
-  padding: 14px 22px;
+  border-radius: var(--radius);
+  padding: 14px 26px;
   cursor: pointer;
-  transition: background 150ms ease;
+  transition: background 150ms var(--ease), transform 120ms var(--ease);
 
   &:hover {
-    background: var(--accent-hover);
+    background: var(--accent);
+  }
+
+  &:active {
+    transform: translateY(1px);
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 860px) {
   .contact {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 40px;
+    padding: 64px var(--pad-x);
   }
 }
 </style>

@@ -1,57 +1,124 @@
-// Design tokens — from new-design/README.md
-// Exposed as CSS custom properties (global) + SCSS vars (for use in additionalData).
+// Design tokens. Overhaul (full visual reset, light theme).
+// Accent: vermilion. Type: Bricolage Grotesque / Geist / Geist Mono.
+// Exposed as CSS custom properties (global).
 
 :root {
-  // Accent
-  --accent: oklch(0.55 0.20 255);            // ticker, buttons, bullets
-  --accent-hover: oklch(0.49 0.20 255);      // button/contact hover
-  --accent-text: oklch(0.47 0.20 255);       // eyebrow, labels
-  --accent-tint-bg: oklch(0.55 0.20 255 / 0.08);
-  --accent-tint-border: oklch(0.55 0.20 255 / 0.25);
-  --accent-hover-border: oklch(0.55 0.20 255 / 0.5);
+  // Accent: one hot accent, locked per page load. A head script picks one of
+  // three palettes at random each refresh (see [data-accent] blocks below).
+  // Default (emerald) covers SSR / no-JS before the script runs.
+  --accent: #0c7d54;        // fills, large marks, focus
+  --accent-hover: #0a6644;  // interactive hover
+  --accent-ink: #0a6644;    // accent as small text on paper (AA)
+  --accent-tint: rgba(12, 125, 84, 0.09);   // faint fields
+  --accent-line: rgba(12, 125, 84, 0.30);   // tinted hairlines
+  --on-accent: #f1faf6;     // text on accent fills
 
-  // Ink / text
-  --ink: #0a0a0a;          // headings, primary text
-  --value-text: #1a1a1a;   // now-board values
-  --body: #4d4d4d;         // hero paragraph
-  --body-2: #5d5d5d;       // card descriptions
-  --chip-text: #333333;
-  --chip-bg: #f1f1f1; // solid tag background
+  // Surfaces: warm off-white paper
+  --paper: #fbfaf8;        // page background
+  --paper-2: #f3f1ec;      // alt panel / inset surface
+  --paper-3: #ece9e2;      // deeper inset
 
-  // Mono / muted grays
-  --mono-muted: #707070;
-  --mono-muted-2: #777777;
-  --mono-faint: #9a9a9a;
-  --mono-faint-2: #a0a0a0;
-  --mono-faint-3: #aaaaaa;
-  --index-gray: #c4c4c4;
+  // Ink / text (warm near-black, never pure #000)
+  --ink: #14110f;          // headings, primary text
+  --ink-2: #46413c;        // body copy
+  --muted: #6f685f;        // secondary / labels
+  --faint: #9b948a;        // hairline-weight meta
 
-  // Surfaces & borders
-  --surface: #ffffff;
-  --border-strong: #e2e2e2;
-  --border-strong-2: #e6e6e6;
-  --border-soft: #ececec;
-  --border-soft-2: #eeeeee;
-  --card-bg: #ffffff; // solid card surface (covers grid)
-  --grid-line: rgba(10, 10, 10, 0.035); // faint background grid line
-  --grid-size: 28px; // grid cell size
+  // Structure
+  --line: rgba(20, 17, 15, 0.12);    // hairlines
+  --line-soft: rgba(20, 17, 15, 0.07);
 
-  // Radii
+  // Background grid
+  --grid-line: rgba(20, 17, 15, 0.07);
+  --grid-size: 32px;
+
+  // Radii: editorial / sharp. One scale, documented:
+  //   structural surfaces + interactive = sharp (2px); avatar = round.
+  --radius: 2px;
   --radius-round: 999px;
-  --radius-lg: 16px;
-  --radius-md: 14px;
-  --radius-sm: 10px;
-  --radius-xs: 8px;
-
-  // Shadow
-  --shadow-board: 0 24px 60px -34px rgba(0, 0, 0, 0.35);
 
   // Layout
-  --max-width: 1280px;
-  --pad-x: 48px;
+  --max-width: 1320px;
+  --pad-x: 40px;
 
   // Fonts
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'Hanken Grotesk', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Geist', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+
+  // Motion
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+// ── Random accent palettes (picked per page load by the head script) ──
+:root[data-accent='emerald'] {
+  --accent: #0c7d54;
+  --accent-hover: #0a6644;
+  --accent-ink: #0a6644;
+  --accent-tint: rgba(12, 125, 84, 0.09);
+  --accent-line: rgba(12, 125, 84, 0.30);
+  --on-accent: #f1faf6;
+}
+
+:root[data-accent='cobalt'] {
+  --accent: #2747ff;
+  --accent-hover: #1b35d6;
+  --accent-ink: #2236c2;
+  --accent-tint: rgba(39, 71, 255, 0.09);
+  --accent-line: rgba(39, 71, 255, 0.30);
+  --on-accent: #f2f4ff;
+}
+
+:root[data-accent='raspberry'] {
+  --accent: #d11e6a;
+  --accent-hover: #b01659;
+  --accent-ink: #a81457;
+  --accent-tint: rgba(209, 30, 106, 0.09);
+  --accent-line: rgba(209, 30, 106, 0.30);
+  --on-accent: #fff1f6;
+}
+
+:root[data-accent='teal'] {
+  --accent: #0a7077;
+  --accent-hover: #085c61;
+  --accent-ink: #085c61;
+  --accent-tint: rgba(10, 112, 119, 0.10);
+  --accent-line: rgba(10, 112, 119, 0.30);
+  --on-accent: #f0fafa;
+}
+
+:root[data-accent='violet'] {
+  --accent: #6d28d9;
+  --accent-hover: #5b1fb8;
+  --accent-ink: #5b1fb8;
+  --accent-tint: rgba(109, 40, 217, 0.09);
+  --accent-line: rgba(109, 40, 217, 0.30);
+  --on-accent: #f6f1fe;
+}
+
+:root[data-accent='crimson'] {
+  --accent: #c81e3c;
+  --accent-hover: #aa1733;
+  --accent-ink: #aa1733;
+  --accent-tint: rgba(200, 30, 60, 0.09);
+  --accent-line: rgba(200, 30, 60, 0.30);
+  --on-accent: #fff1f3;
+}
+
+:root[data-accent='amber'] {
+  --accent: #8a5c00;
+  --accent-hover: #6f4a00;
+  --accent-ink: #6f4a00;
+  --accent-tint: rgba(138, 92, 0, 0.10);
+  --accent-line: rgba(138, 92, 0, 0.32);
+  --on-accent: #fdf6e7;
+}
+
+:root[data-accent='indigo'] {
+  --accent: #3730a3;
+  --accent-hover: #2f2986;
+  --accent-ink: #2f2986;
+  --accent-tint: rgba(55, 48, 163, 0.09);
+  --accent-line: rgba(55, 48, 163, 0.30);
+  --on-accent: #f1f1fc;
 }
