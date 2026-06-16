@@ -1,7 +1,15 @@
-# Now board — fill these in. Values + updated date are placeholders.
-updated: "TODO"
+# Now board. Edit these freely, they render verbatim.
+# Seeded from your real bio so the board ships un-broken; swap in whatever's true.
+updated: "Jun 2026"
 rows:
-  - { label: "Building", value: "TODO" }
-  - { label: "Learning", value: "TODO" }
-  - { label: "Reading", value: "TODO" }
-availability: "● Open to select work"
+    - {
+          label: "Building",
+          value: "Logistics platform at Opus, Savino del Bene",
+      }
+    - {
+          label: "Learning",
+          value: "Using AI tools to build better software",
+      }
+    - { label: "Reading", value: "Hacker News and Lobsters" }
+
+availability: "Open to select work"

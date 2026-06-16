@@ -1,37 +1,61 @@
 <template>
-  <footer class="footer">
-    <span class="footer__credit">
-      Designed with <a class="footer__link" href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Design</a>
-      &middot; Built with <a class="footer__link" href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>
-    </span>
-  </footer>
+    <footer class="footer">
+        <span class="footer__mark">Leonardo Bianco</span>
+        <span class="footer__credit">
+            Designed with
+            <a
+                class="footer__link"
+                href="https://www.tasteskill.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Taste</a
+            >, Built with
+            <a
+                class="footer__link"
+                href="https://claude.com/claude-code"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Claude Code</a
+            >
+        </span>
+    </footer>
 </template>
 
 <style scoped lang="scss">
 .footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 28px var(--pad-x) 40px;
-  border-top: 1px solid var(--border-soft);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 36px var(--pad-x) 48px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.footer__mark {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .footer__credit {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--mono-faint);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--muted);
 }
 
 .footer__link {
-  color: var(--mono-muted);
-  text-decoration: none;
-  border-bottom: 1px solid var(--accent-tint-border);
-  padding-bottom: 1px;
-  transition: color 150ms ease;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-line);
+    transition: color 150ms var(--ease);
 
-  &:hover {
-    color: var(--accent-text);
-  }
+    &:hover {
+        color: var(--accent-ink);
+    }
 }
 </style>

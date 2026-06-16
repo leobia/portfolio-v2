@@ -1,12 +1,12 @@
 ticker:
-    - "● Open to select work"
-    - "// Shipping since 2017"
-    - "// Backend · Web · Infra"
-    - "// Based Florence (Italy), global"
+    - "Open to select work"
+    - "Shipping since 2017"
+    - "Backend / Web / Infra"
+    - "Florence, Italy"
 
 seo:
-    title: "Leonardo Bianco — Web Developer"
-    description: "Leonardo Bianco, web developer based in Firenze. Robust products, clean architecture, fast and accessible interfaces — from backend services to the last pixel."
+    title: "Leonardo Bianco, Software Engineer"
+    description: "Leonardo Bianco, software engineer based in Firenze. I build backend services and fast, accessible web that holds up in production."
     url: "https://leonardobianco.dev"
     image: "/og.png"
 

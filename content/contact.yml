@@ -1,11 +1,11 @@
 # Contact section. Submissions go through Netlify Forms (native, no serverless).
 # Netlify detects the form at build time from the generated static HTML.
-# To wire delivery: Netlify dashboard → Forms → set notification email.
+# To wire delivery: Netlify dashboard, Forms, set notification email.
 # CV: drop the file in /public/files and point `cv.file` at it.
 label: "Contact"
-tagline: "// let's build something"
+tagline: "let's build something"
 heading: "Have a project in mind?"
-body: "Backend, web, or infra — tell me what you're building and I'll get back to you."
+body: "Backend, web, or infra: tell me what you're building and I'll get back to you."
 email: "leonardo.bianco@outlook.com"
 cv:
   label: "Download CV"

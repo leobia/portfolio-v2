@@ -3,7 +3,7 @@ interface HeroContent {
   eyebrow: string
   headline: { lead: string; accent: string }
   body: string
-  tags: string[]
+  tags?: string[]
   buttons: {
     primary: { label: string; href: string }
     secondary: { label: string; href: string }
@@ -23,71 +23,66 @@ defineProps<{
 </script>
 
 <template>
-  <div class="hero">
+  <header class="hero" id="top-hero">
     <div class="hero__intro">
-      <div class="hero__eyebrow">{{ hero.eyebrow }}</div>
-      <h1 class="hero__headline">
-        {{ hero.headline.lead }} <span class="hero__accent">{{ hero.headline.accent }}</span>
+      <p v-reveal class="hero__eyebrow">{{ hero.eyebrow }}</p>
+      <h1 v-reveal="80" class="hero__headline">
+        {{ hero.headline.lead }}
+        <span class="hero__accent">{{ hero.headline.accent }}</span>
       </h1>
-      <p class="hero__body">{{ hero.body }}</p>
-      <div class="hero__chips">
-        <span v-for="tag in hero.tags" :key="tag" class="hero__chip">{{ tag }}</span>
-      </div>
-      <div class="hero__actions">
-        <a class="hero__btn hero__btn--primary" :href="hero.buttons.primary.href">{{ hero.buttons.primary.label }}</a>
-        <a class="hero__btn hero__btn--secondary" :href="hero.buttons.secondary.href">{{ hero.buttons.secondary.label }}</a>
+      <p v-reveal="160" class="hero__body">{{ hero.body }}</p>
+      <div v-reveal="240" class="hero__actions">
+        <a v-magnetic class="hero__btn hero__btn--primary" :href="hero.buttons.primary.href">
+          {{ hero.buttons.primary.label }}
+        </a>
+        <a class="hero__btn hero__btn--secondary" :href="hero.buttons.secondary.href">
+          {{ hero.buttons.secondary.label }}
+        </a>
       </div>
     </div>
 
-    <div class="board">
+    <aside v-reveal="160" class="board">
       <div class="board__header">
-        <span class="board__title"><span class="board__dot">●</span> Now</span>
+        <span class="board__title">Now</span>
         <span class="board__updated">Updated {{ now.updated }}</span>
       </div>
-      <div class="board__rows">
+      <dl class="board__rows">
         <div v-for="row in now.rows" :key="row.label" class="board__row">
-          <div class="board__label">{{ row.label }}</div>
-          <div class="board__value">{{ row.value }}</div>
+          <dt class="board__label">{{ row.label }}</dt>
+          <dd class="board__value">{{ row.value }}</dd>
         </div>
-      </div>
-      <div class="board__availability">{{ now.availability }}</div>
-    </div>
-  </div>
+      </dl>
+      <p class="board__availability">{{ now.availability }}</p>
+    </aside>
+  </header>
 </template>
 
 <style scoped lang="scss">
 .hero {
-  display: grid;
-  grid-template-columns: 1.18fr 0.82fr;
-  gap: 56px;
-  align-items: center;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 72px var(--pad-x) 64px;
+  min-height: calc(100dvh - 68px - 41px); // viewport minus nav + ticker
+  display: grid;
+  grid-template-columns: 1.3fr 0.82fr;
+  align-items: center;
+  gap: 64px;
+  padding: 64px var(--pad-x) 72px;
 }
 
 .hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  background: var(--accent-tint-bg);
-  border: 1px solid var(--accent-tint-border);
-  border-radius: var(--radius-round);
-  padding: 8px 16px;
+  margin: 0 0 26px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent-text);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--accent-ink);
 }
 
 .hero__headline {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 68px;
-  line-height: 0.97;
-  letter-spacing: -0.035em;
-  margin: 26px 0 24px;
+  font-size: clamp(2.8rem, 6.4vw, 5.4rem);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  margin: 0;
 }
 
 .hero__accent {
@@ -95,52 +90,41 @@ defineProps<{
 }
 
 .hero__body {
-  max-width: 500px;
-  font-size: 17px;
-  line-height: 1.62;
-  color: var(--body);
-  margin: 0 0 30px;
-}
-
-.hero__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 34px;
-}
-
-.hero__chip {
-  background: var(--chip-bg);
-  border-radius: var(--radius-round);
-  padding: 7px 13px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--chip-text);
+  max-width: 46ch;
+  margin: 30px 0 36px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-2);
 }
 
 .hero__actions {
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
 .hero__btn {
-  border-radius: var(--radius-sm);
-  padding: 16px 24px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius);
+  padding: 15px 26px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   text-decoration: none;
-  cursor: pointer;
-  transition: background 150ms ease, color 150ms ease;
+  white-space: nowrap;
+  transition: background 150ms var(--ease), color 150ms var(--ease),
+    border-color 150ms var(--ease);
+
+  &:active {
+    transform: translateY(1px);
+  }
 }
 
 .hero__btn--primary {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   border: 1px solid var(--accent);
 
   &:hover {
@@ -150,98 +134,92 @@ defineProps<{
 }
 
 .hero__btn--secondary {
-  background: var(--surface);
+  background: transparent;
   color: var(--ink);
   border: 1px solid var(--ink);
 
   &:hover {
     background: var(--ink);
-    color: #fff;
+    color: var(--paper);
   }
 }
 
+// ── Now board ──
 .board {
-  background: var(--surface);
-  border: 1px solid var(--border-strong-2);
-  border-radius: var(--radius-lg);
-  padding: 26px 28px;
-  box-shadow: var(--shadow-board);
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 30px;
 }
 
 .board__header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   padding-bottom: 18px;
-  border-bottom: 1px solid var(--border-soft-2);
+  border-bottom: 1px solid var(--line);
 }
 
 .board__title {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.board__dot {
-  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .board__updated {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--mono-faint-3);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
 }
 
 .board__rows {
+  margin: 0;
+  padding: 22px 0 6px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding: 22px 0 4px;
+  gap: 20px;
+}
+
+.board__row {
+  margin: 0;
 }
 
 .board__label {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--mono-faint-2);
-  margin-bottom: 5px;
+  color: var(--muted);
+  margin-bottom: 6px;
 }
 
 .board__value {
-  font-size: 15.5px;
-  color: var(--value-text);
+  margin: 0;
+  font-size: 16px;
+  color: var(--ink);
 }
 
 .board__availability {
-  margin-top: 22px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--accent-tint-bg);
-  border: 1px solid var(--accent-tint-border);
-  border-radius: var(--radius-round);
+  margin: 22px 0 0;
+  display: inline-block;
+  background: var(--accent-tint);
+  border: 1px solid var(--accent-line);
+  border-radius: var(--radius);
   padding: 9px 15px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-text);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--accent-ink);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 860px) {
   .hero {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 48px var(--pad-x) 40px;
-  }
-
-  .hero__headline {
-    font-size: 48px;
+    min-height: 0;
+    gap: 44px;
+    padding: 48px var(--pad-x) 56px;
   }
 }
 </style>
