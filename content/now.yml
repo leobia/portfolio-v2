@@ -2,7 +2,14 @@
 # Seeded from your real bio so the board ships un-broken; swap in whatever's true.
 updated: "Jun 2026"
 rows:
-  - { label: "Building", value: "Logistics platform at Opus, Savino del Bene" }
-  - { label: "Learning", value: "Distributed systems and Kubernetes" }
-  - { label: "Reading", value: "Designing Data-Intensive Applications" }
+    - {
+          label: "Building",
+          value: "Logistics platform at Opus, Savino del Bene",
+      }
+    - {
+          label: "Learning",
+          value: "Leveraging ai tools to build better software",
+      }
+    - { label: "Reading", value: "Hacker News and Lobsters" }
+
 availability: "Open to select work"

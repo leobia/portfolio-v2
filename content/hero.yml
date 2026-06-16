@@ -1,12 +1,11 @@
 eyebrow: "Web Developer, Firenze"
 headline:
-  lead: "Crafting fast, accessible web that"
-  accent: "ships clean."
-body: "I'm Leonardo Bianco, a web developer in Firenze. I build robust products with clean architecture and fast, accessible interfaces, from backend services to the last pixel."
+    lead: "Crafting fast, accessible web that"
+    accent: "ships clean."
+body: "I'm Leonardo Bianco, a web developer in Florence, Italy. I build robust products with clean architecture and fast, accessible interfaces, from backend services to the last pixel."
 tags:
-  - "Backend & APIs"
-  - "Web Platform"
-  - "DX & Tooling"
+    - "Backend & APIs"
+    - "Web Platform"
 buttons:
-  primary: { label: "View Projects", href: "#work" }
-  secondary: { label: "View Journey", href: "#journey" }
+    primary: { label: "View Projects", href: "#work" }
+    secondary: { label: "View Journey", href: "#journey" }

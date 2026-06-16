@@ -16,7 +16,7 @@ items:
       company: "Baker Hughes (via Bridge Consulting)"
       role: "Full-stack Developer"
       year: "2019-2022"
-      stack: ["Spring Boot", "Vue.js", "PostgreSQL", "AWS EC2"]
+      stack: ["Spring Boot", "Vue.js", "PostgreSQL", "AWS"]
     - category: "Reporting / Automation"
       title: "Plant Performance Report Generator"
       subtitle: "Template-driven, scheduled PDF reporting at scale."
@@ -32,7 +32,7 @@ items:
       company: "American Express (via Engineering)"
       role: "Solution Developer"
       year: "2022-2024"
-      stack: ["Spring Boot", "Angular", "SQL"]
+      stack: ["Spring Boot", "Angular", "PostgreSQL"]
     - category: "Healthcare / Microservices"
       title: "Multi-Hospital Clinical Platform"
       subtitle: "Microservices software running in ~20 Italian hospitals."
@@ -44,8 +44,16 @@ items:
     - category: "Logistics / SaaS"
       title: "4PL Shipment Platform"
       subtitle: "Managing and tracking B2B shipments end to end."
-      description: "Helped build a 4PL platform to manage and track B2B shipments, the startup's core product, plus a spreadsheet-like interface for shipment data. It runs on a company-owned Kubernetes (AKS) cluster with CI/CD across every project."
+      description: "Helped build a 4PL platform to manage and track B2B shipments, the startup's core product, plus a spreadsheet-like interface for shipment data. It runs on a company-owned Kubernetes (AKS) cluster with Gitlab CI/CD across every project."
       company: "Opus, Savino del Bene"
       role: "Main Developer"
       year: "2024-Now"
-      stack: ["Kubernetes (AKS)", "Azure", "CI/CD"]
+      stack:
+          [
+              "Spring Boot",
+              "Vue.js",
+              "PostgreSQL",
+              "Kubernetes (AKS)",
+              "Azure",
+              "CI/CD",
+          ]
