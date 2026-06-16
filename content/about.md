@@ -1,10 +1,10 @@
 ---
 heading: About
-kicker: Software developer, shipping since 2017
+kicker: Software engineer, shipping since 2017
 ---
 
-I'm **Leonardo Bianco**, a web developer based in Firenze. I focus on robust products, clean architecture, and fast, accessible interfaces, from backend services to the last pixel.
+I'm **Leonardo Bianco**, a software engineer in Firenze. I work across the stack, from backend services to the interfaces people actually use, and I care that both stay fast and hold up under real load.
 
-I care about systems that ship and keep working: well-shaped APIs, a maintainable web platform, and tooling that makes the whole team faster. I move comfortably across the stack, but I'm happiest where reliability meets a sharp user experience.
+Most of what I build has to keep running once it ships: APIs other teams rely on, web platforms that stay maintainable as they grow, internal tooling that makes the work faster. I'm most useful when reliability is the hard part.
 
-When I'm not building, I'm usually reading about distributed systems, refining my dev setup, or pulling apart how a good product is put together.
+When I'm not coding I read about distributed systems, mess with my dev setup, and take apart products I like to figure out how they work.

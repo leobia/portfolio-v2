@@ -8,7 +8,7 @@ rows:
       }
     - {
           label: "Learning",
-          value: "Leveraging ai tools to build better software",
+          value: "Using AI tools to build better software",
       }
     - { label: "Reading", value: "Hacker News and Lobsters" }
 

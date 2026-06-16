@@ -7,14 +7,14 @@
 #   link                                   (optional)
 label: "Selected Work"
 tagline: "systems that ship"
-intro: "Eight years across logistics, healthcare, finance and industrial systems. Most of it is proprietary, so here is the shape of the work and the stack behind each build."
+intro: "Eight years across logistics, healthcare, finance and industrial systems. Most of it is proprietary, so what follows is the work itself and the stack behind each build."
 items:
     - category: "Industrial IoT / Monitoring"
       title: "Live Plant Monitoring Platform"
       subtitle: "Real-time dashboards for industrial plants worldwide."
       description: "A web platform to monitor industrial plants across the globe through live dashboards and charts, surfacing issues and logging the activity performed on each plant. I also built a demo mode that anonymized the data for presentations with external audiences."
       company: "Baker Hughes (via Bridge Consulting)"
-      role: "Full-stack Developer"
+      role: "Software Engineer"
       year: "2019-2022"
       stack: ["Spring Boot", "Vue.js", "PostgreSQL", "AWS"]
     - category: "Reporting / Automation"
@@ -22,7 +22,7 @@ items:
       subtitle: "Template-driven, scheduled PDF reporting at scale."
       description: "Users composed Word-style paginated templates with rich text, placeholders and drag-and-drop Plotly.js charts, then scheduled generation across plants. The pipeline filled the data from JSON and used Puppeteer to render each template to PDF."
       company: "Baker Hughes (via Bridge Consulting)"
-      role: "Full-stack Developer"
+      role: "Software Engineer"
       year: "2019-2022"
       stack: ["Spring Boot", "Vue.js", "Plotly.js", "Puppeteer", "PostgreSQL"]
     - category: "Legacy / Reverse Engineering"
@@ -30,7 +30,7 @@ items:
       subtitle: "From unrunnable VBScript to a modern web app."
       description: "An old tool had become nearly impossible to run on its legacy VBScript stack, which decrypted documents through a very old Windows API. I reverse-engineered the VBScript and its database access, then rebuilt the whole application in Spring Boot and Angular."
       company: "American Express (via Engineering)"
-      role: "Solution Developer"
+      role: "Software Engineer"
       year: "2022-2024"
       stack: ["Spring Boot", "Angular", "PostgreSQL"]
     - category: "Healthcare / Microservices"
@@ -38,7 +38,7 @@ items:
       subtitle: "Microservices software running in ~20 Italian hospitals."
       description: "Part of the team behind a platform used by around twenty hospitals across Italy, built on a microservices architecture spanning both the frontend and the backend."
       company: "Engineering Ingegneria Informatica"
-      role: "Solution Developer"
+      role: "Software Engineer"
       year: "2022-2024"
       stack: ["Angular", "Spring Boot", "Microservices"]
     - category: "Logistics / SaaS"
@@ -46,7 +46,7 @@ items:
       subtitle: "Managing and tracking B2B shipments end to end."
       description: "Helped build a 4PL platform to manage and track B2B shipments, the startup's core product, plus a spreadsheet-like interface for shipment data. It runs on a company-owned Kubernetes (AKS) cluster with Gitlab CI/CD across every project."
       company: "Opus, Savino del Bene"
-      role: "Main Developer"
+      role: "Senior Software Engineer"
       year: "2024-Now"
       stack:
           [
