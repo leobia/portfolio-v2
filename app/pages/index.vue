@@ -19,20 +19,7 @@ const { data: contact } = await useAsyncData('contact', () =>
   queryCollection('contact').first(),
 )
 
-const meta = computed(() => (settings.value?.seo ? buildSeoMeta(settings.value.seo) : {}))
-useSeoMeta({
-  title: () => meta.value.title,
-  description: () => meta.value.description,
-  ogTitle: () => meta.value.ogTitle,
-  ogDescription: () => meta.value.ogDescription,
-  ogImage: () => meta.value.ogImage,
-  ogUrl: () => meta.value.ogUrl,
-  ogType: () => meta.value.ogType,
-  twitterCard: () => meta.value.twitterCard,
-  twitterTitle: () => meta.value.twitterTitle,
-  twitterDescription: () => meta.value.twitterDescription,
-  twitterImage: () => meta.value.twitterImage,
-})
+if (settings.value?.seo) useSeoMeta(buildSeoMeta(settings.value.seo))
 </script>
 
 <template>

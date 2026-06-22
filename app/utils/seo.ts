@@ -5,13 +5,8 @@ export interface SiteSeo {
   image: string
 }
 
-function absoluteUrl(base: string, path: string): string {
-  if (/^(https?:)?\/\//.test(path)) return path
-  return `${base.replace(/\/$/, '')}/${path.replace(/^\//, '')}`
-}
-
 export function buildSeoMeta(seo: SiteSeo) {
-  const image = absoluteUrl(seo.url, seo.image)
+  const image = new URL(seo.image, seo.url).href
   return {
     title: seo.title,
     description: seo.description,
